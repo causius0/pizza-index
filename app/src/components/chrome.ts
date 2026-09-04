@@ -31,7 +31,7 @@ export function method(): string {
     <h2>Method</h2>
     <dl class="method-list">
       <div><dt>Identical basket</dt><dd>Margherita — tomato, fior-di-latte, basil, extra-virgin olive oil — at a certified pizzeria. The Big Mac's “same sandwich everywhere”, without the chain.</dd></div>
-      <div><dt>Whitelist</dt><dd>AVPN directory (886 members, primary) plus Eccellenze Italiane and Ospitalità Italiana. Kestè NYC is listed but excluded from the US average — it is absent from the AVPN directory.</dd></div>
+      <div><dt>Whitelist</dt><dd>AVPN directory (886 members, primary) plus Eccellenze Italiane and Ospitalità Italiana. Only directory-listed venues enter the averages — no exceptions.</dd></div>
       <div><dt>Average, not single</dt><dd>Each market figure is the mean across all certified observations in that market. Italy is split into Naples, Rome and Milan.</dd></div>
       <div><dt>Wages</dt><dd>Mean (and median where sourced) monthly pay per country; hours-to-Margherita assumes a 176-hour month. Gross and net figures are never mixed without a label.</dd></div>
       <div><dt>Limits</dt><dd>Single product, no GDP adjustment, rents and wages distort, thin coverage where certification is absent. Stale or proxy figures carry LOW/MED badges, never HIGH.</dd></div>

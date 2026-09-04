@@ -2,14 +2,8 @@ import type { PriceObservation, Pizzeria } from './types.js';
 
 // Pizzerias with a price observation. `certification.certUrl` always points at the
 // AVPN member page (or the directory when the member page is unknown).
-// Kestè (NYC) is NOT in the current AVPN directory — kept as an Eccellenze-style
-// anchor, excluded from the certified average until its certification URL is confirmed.
+// Only AVPN-directory venues are listed — no exceptions.
 export const PRICED: Pizzeria[] = [
-  {
-    id: 'keste-nyc', name: 'Kestè Pizza & Vino', city: 'New York City', country: 'US',
-    website: 'https://kestepizzeria.com/',
-    certification: { source: 'Unverified', certUrl: 'https://www.pizzanapoletana.org/en/associati' },
-  },
   {
     id: 'ribalta-nyc', name: 'Ribalta', city: 'New York City', country: 'US',
     website: 'https://www.ribaltapizzanapoli.com/',
@@ -69,7 +63,6 @@ export const PRICED: Pizzeria[] = [
 export const OBSERVATIONS: PriceObservation[] = [
   { pizzeriaId: 'naples-base', price: 6.0, currency: 'EUR', source: 'OpenPizzaMap Naples 2026 guide + pizzadixit.com (€5–6 neighbourhood, €6–7 historic)', observedAt: '2026-09-04', confidence: 'HIGH', note: 'Index base' },
   { pizzeriaId: 'damichele-london', price: 14.99, currency: 'GBP', source: 'https://eateasy.co.uk/.../Lantica-Pizzeria-Da-Michele-W1D-4TY-menu.php', observedAt: '2026-09-04', confidence: 'HIGH' },
-  { pizzeriaId: 'keste-nyc', price: 19.2, currency: 'USD', source: 'https://kestepizzeria.com/menu/', observedAt: '2026-09-04', confidence: 'HIGH', note: 'NOT in AVPN directory — excluded from certified average', includeInAverage: false },
   { pizzeriaId: 'ribalta-nyc', price: 22.0, currency: 'USD', source: 'PRIX Restaurant Week (Pizza Margherita “normally $22”)', observedAt: '2026-09-04', confidence: 'MED', note: 'AVPN #459; delivery menu lists Margherita STG $18 — dine-in $22 used' },
   { pizzeriaId: 'kalo-london', price: 10.95, currency: 'GBP', source: 'MyLondon (menu range; Margherita £10.95)', observedAt: '2026-09-04', confidence: 'MED' },
   { pizzeriaId: 'bottega-shanghai', price: 89.0, currency: 'CNY', source: 'sophieservesup (Capri by Bottega menu: Margherita RMB89)', observedAt: '2026-09-04', confidence: 'MED', note: 'First AVPN-certified pizzeria in China' },
