@@ -41,7 +41,7 @@ export function method(): string {
 
 export function footer(): string {
   return `<footer><div class="wrap foot-in">
-    <div><strong>Margherita Index</strong><br><small>Base Naples €${BASE_EUR.toFixed(2)} · FX ${FX_DATE} (ECB; crosses indicative) · wages: UNECE/OECD + national sources, see table</small></div>
+    <div><strong>Margherita Index</strong><br><small>Base Naples €${BASE_EUR.toFixed(2)} · FX ${FX_DATE} (ECB; crosses indicative) · menu prices observed Sep 2026 · wages: UNECE/OECD + national sources, see table</small></div>
     <div><small>Certification: <a href="https://www.pizzanapoletana.org/en/associati">pizzanapoletana.org</a><br>Built with TypeScript + Vite · no backend</small></div>
   </div></footer>`;
 }
