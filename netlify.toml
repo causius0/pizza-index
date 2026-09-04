@@ -1,8 +1,9 @@
 [build]
-  command = "npm run generate"
-  publish = "site/"
+  base = "app/"
+  command = "npm run build"
+  publish = "dist/"
 
 [[headers]]
-  for = "/index.json"
+  for = "/*"
   [headers.values]
-    Access-Control-Allow-Origin = "*"
+    X-Content-Type-Options = "nosniff"
