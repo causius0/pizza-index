@@ -11,12 +11,20 @@ with **Italian certification as the uniformity guarantee**: only certified pizze
   website + certification URL + source + confidence. Country figure = **mean**
   across certified observations (non-AVPN anchors like Kestè NYC are listed but
   excluded from the average).
-- **Index**: `npm run generate` → `dist/index.json` + `dist/index.html`.
+- **Index**: `npm run generate` → `site/index.json` + `site/index.html`.
   `implied PPP = avgLocal / €6.00 (Naples base)`; valuation vs market FX on ECB 2026-09-03.
 
 ## Run
 
 ```bash
 npm install
-npm run generate
+npm run generate   # typechecks, computes averages, writes site/index.html + site/index.json
 ```
+
+## Deploy (any static host — `site/` is the whole app)
+
+- **GitHub Pages**: push to `main` → Actions workflow builds and publishes `site/`
+  (Settings → Pages → Source: GitHub Actions).
+- **Netlify**: `netlify.toml` already sets build `npm run generate`, publish `site/`.
+- **Vercel**: `vercel.json` sets output to `site/`; build command `npm run generate`.
+- **Anywhere else**: serve `site/` as static files (`index.html` + `index.json`).

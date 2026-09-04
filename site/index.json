@@ -62,14 +62,14 @@
   },
   {
    "country": "CN",
-   "currency": "",
+   "currency": "CNY",
    "nCertified": 5,
-   "nPriced": 0,
-   "avgLocal": null,
-   "avgEur": null,
-   "impliedPpp": null,
-   "actualFx": null,
-   "overUnderPct": null
+   "nPriced": 1,
+   "avgLocal": 89,
+   "avgEur": 11.337579617834395,
+   "impliedPpp": 14.833333333333334,
+   "actualFx": 7.85,
+   "overUnderPct": 88.95966029723994
   },
   {
    "country": "CO",
@@ -119,12 +119,12 @@
    "country": "GB",
    "currency": "GBP",
    "nCertified": 38,
-   "nPriced": 1,
-   "avgLocal": 14.99,
-   "avgEur": 17.41909244088083,
-   "impliedPpp": 2.4983333333333335,
+   "nPriced": 2,
+   "avgLocal": 12.969999999999999,
+   "avgEur": 15.071756434838182,
+   "impliedPpp": 2.1616666666666666,
    "actualFx": 0.86055,
-   "overUnderPct": 190.31820734801389
+   "overUnderPct": 151.1959405806364
   },
   {
    "country": "IT",
@@ -164,11 +164,11 @@
    "currency": "USD",
    "nCertified": 100,
    "nPriced": 1,
-   "avgLocal": 18,
-   "avgEur": 15.497201894102455,
-   "impliedPpp": 3,
+   "avgLocal": 22,
+   "avgEur": 18.941024537236334,
+   "impliedPpp": 3.6666666666666665,
    "actualFx": 1.1615,
-   "overUnderPct": 158.2866982350409
+   "overUnderPct": 215.6837422872722
   }
  ],
  "pizzerias": [
@@ -219,7 +219,7 @@
    }
   },
   {
-   "id": "kalò-london",
+   "id": "kalo-london",
    "name": "50 Kalò di Ciro Salvo London",
    "city": "London",
    "country": "GB",
@@ -227,6 +227,17 @@
     "source": "AVPN",
     "memberNumber": "750",
     "certUrl": "https://www.pizzanapoletana.org/en/associati/755-50_kalo_di_ciro_salvo_london"
+   }
+  },
+  {
+   "id": "bottega-shanghai",
+   "name": "Bottega",
+   "city": "Shanghai",
+   "country": "CN",
+   "certification": {
+    "source": "AVPN",
+    "memberNumber": "1040",
+    "certUrl": "https://www.pizzanapoletana.org/en/associati/1019-bottega"
    }
   },
   {
@@ -339,12 +350,29 @@
   },
   {
    "pizzeriaId": "ribalta-nyc",
-   "price": 18,
+   "price": 22,
    "currency": "USD",
-   "source": "https://allmenus.com/ny/new-york/337447-ribalta-pizza/menu (Margherita STG: tomato, imported fior di latte, basil)",
+   "source": "PRIX Restaurant Week (Pizza Margherita “normally $22”)",
    "observedAt": "2026-09-04",
-   "confidence": "HIGH",
-   "note": "Cross-check prix.nyc Restaurant Week: Pizza Margherita normally $22"
+   "confidence": "MED",
+   "note": "AVPN #459; delivery menu lists Margherita STG $18 — dine-in $22 used"
+  },
+  {
+   "pizzeriaId": "kalo-london",
+   "price": 10.95,
+   "currency": "GBP",
+   "source": "MyLondon (menu range; Margherita £10.95)",
+   "observedAt": "2026-09-04",
+   "confidence": "MED"
+  },
+  {
+   "pizzeriaId": "bottega-shanghai",
+   "price": 89,
+   "currency": "CNY",
+   "source": "sophieservesup (Capri by Bottega menu: Margherita RMB89)",
+   "observedAt": "2026-09-04",
+   "confidence": "MED",
+   "note": "First AVPN-certified pizzeria in China"
   },
   {
    "pizzeriaId": "libretto-ossington",

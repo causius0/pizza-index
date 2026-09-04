@@ -26,8 +26,12 @@ export const PRICED: Pizzeria[] = [
     certification: { source: 'AVPN', certUrl: 'https://www.pizzanapoletana.org/en/associati' },
   },
   {
-    id: 'kalò-london', name: '50 Kalò di Ciro Salvo London', city: 'London', country: 'GB',
+    id: 'kalo-london', name: '50 Kalò di Ciro Salvo London', city: 'London', country: 'GB',
     certification: { source: 'AVPN', memberNumber: '750', certUrl: 'https://www.pizzanapoletana.org/en/associati/755-50_kalo_di_ciro_salvo_london' },
+  },
+  {
+    id: 'bottega-shanghai', name: 'Bottega', city: 'Shanghai', country: 'CN',
+    certification: { source: 'AVPN', memberNumber: '1040', certUrl: 'https://www.pizzanapoletana.org/en/associati/1019-bottega' },
   },
   {
     id: 'leggera-sp', name: 'Leggera Pizza Napoletana', city: 'São Paulo', country: 'BR',
@@ -66,7 +70,9 @@ export const OBSERVATIONS: PriceObservation[] = [
   { pizzeriaId: 'naples-base', price: 6.0, currency: 'EUR', source: 'OpenPizzaMap Naples 2026 guide + pizzadixit.com (€5–6 neighbourhood, €6–7 historic)', observedAt: '2026-09-04', confidence: 'HIGH', note: 'Index base' },
   { pizzeriaId: 'damichele-london', price: 14.99, currency: 'GBP', source: 'https://eateasy.co.uk/.../Lantica-Pizzeria-Da-Michele-W1D-4TY-menu.php', observedAt: '2026-09-04', confidence: 'HIGH' },
   { pizzeriaId: 'keste-nyc', price: 19.2, currency: 'USD', source: 'https://kestepizzeria.com/menu/', observedAt: '2026-09-04', confidence: 'HIGH', note: 'NOT in AVPN directory — excluded from certified average', includeInAverage: false },
-  { pizzeriaId: 'ribalta-nyc', price: 18.0, currency: 'USD', source: 'https://allmenus.com/ny/new-york/337447-ribalta-pizza/menu (Margherita STG: tomato, imported fior di latte, basil)', observedAt: '2026-09-04', confidence: 'HIGH', note: 'Cross-check prix.nyc Restaurant Week: Pizza Margherita normally $22' },
+  { pizzeriaId: 'ribalta-nyc', price: 22.0, currency: 'USD', source: 'PRIX Restaurant Week (Pizza Margherita “normally $22”)', observedAt: '2026-09-04', confidence: 'MED', note: 'AVPN #459; delivery menu lists Margherita STG $18 — dine-in $22 used' },
+  { pizzeriaId: 'kalo-london', price: 10.95, currency: 'GBP', source: 'MyLondon (menu range; Margherita £10.95)', observedAt: '2026-09-04', confidence: 'MED' },
+  { pizzeriaId: 'bottega-shanghai', price: 89.0, currency: 'CNY', source: 'sophieservesup (Capri by Bottega menu: Margherita RMB89)', observedAt: '2026-09-04', confidence: 'MED', note: 'First AVPN-certified pizzeria in China' },
   { pizzeriaId: 'libretto-ossington', price: 19.0, currency: 'CAD', source: 'https://pizzerialibretto.com/menus', observedAt: '2026-09-04', confidence: 'HIGH' },
   { pizzeriaId: 'leggera-sp', price: 74.0, currency: 'BRL', source: 'https://www.pizzerialeggera.com.br/cardapio/cardapio.pdf', observedAt: '2026-09-04', confidence: 'HIGH' },
   { pizzeriaId: 'michele-ba', price: 21800, currency: 'ARS', source: 'Facebook promo (half-price ARS 10,900 → regular ≈ 21,800)', observedAt: '2026-09-04', confidence: 'MED', note: 'Proxy: Siamo nel Forno (#425) price unlisted; high inflation' },

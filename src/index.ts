@@ -104,6 +104,14 @@ writeFileSync(out('index.html'), `<!DOCTYPE html>
 <h2>The index</h2>
 <table><tr><th>Country</th><th>Ccy</th><th># certified</th><th># priced</th><th>Avg local</th><th>Avg EUR</th><th>vs Naples</th></tr>
 ${rowHtml}</table>
+<p><small>How to read: <code>implied PPP = avgLocal / €6.00</code>; <code>signal = (implied − market FX) / market FX</code>. Positive = certified Margherita costs more than Naples after FX (mostly rent/wages/positioning, not currency misalignment). Rows with # priced = 0 are census-only until a menu observation lands.</small></p>
+<h2>Method (Big Mac → Pizza)</h2>
+<ol>
+<li><strong>Identical basket:</strong> Big Mac = same sandwich everywhere. Ours = Margherita (tomato, fior-di-latte, basil, EVOO) at a <strong>certified</strong> pizzeria.</li>
+<li><strong>Whitelist:</strong> AVPN directory (primary) + Eccellenze Italiane / Ospitalità Italiana (supporting). Kestè NYC is listed but excluded from the US average — it is absent from the AVPN directory.</li>
+<li><strong>Average, not single:</strong> country figure = mean across all certified observations in that country.</li>
+<li><strong>Limits:</strong> single product, no GDP adjustment, rents/wages distort, thin coverage where certification is absent.</li>
+</ol>
 <h2>Priced observations (website + certification + menu source)</h2>
 <ul>${pricedHtml}</ul>
 <h2>Certified census — AVPN directory, Sep 2026 (886 members)</h2>
