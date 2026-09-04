@@ -9,7 +9,12 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/topojson-client": "^3.1.5",
     "typescript": "~6.0.2",
     "vite": "^8.2.2"
+  },
+  "dependencies": {
+    "globe.gl": "^2.46.2",
+    "topojson-client": "^3.1.0"
   }
 }
