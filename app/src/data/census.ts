@@ -12,7 +12,7 @@ const NATION_TO_ISO: Record<string, string> = {
   Italia: 'IT', 'Regno Unito': 'GB', Francia: 'FR', Germania: 'DE', Spagna: 'ES',
   'Paesi Bassi (Olanda)': 'NL', Cina: 'CN', 'Emirati Arabi Uniti': 'AE', Qatar: 'QA',
   "Stati Uniti d'America - USA": 'US', Canada: 'CA', Brasile: 'BR', Argentina: 'AR',
-  Cile: 'CL', Colombia: 'CO',
+  Cile: 'CL', Colombia: 'CO', Russia: 'RU',
 };
 
 export const MEMBERS = membersJson as AvpnMember[];

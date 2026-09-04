@@ -62,10 +62,10 @@ function render(): void {
         <button data-ccy="USD" class="${state.ccy === 'USD' ? 'on' : ''}">$ USD</button>
       </div>
     </div>
-    <div class="split" id="globe">
+    <div class="split" id="world">
       <div class="card globe-card">
         <h2>The world, priced</h2>
-        <div id="globe" aria-label="Globe color-coded by valuation vs Naples"></div>
+        <div id="globemap" aria-label="Globe color-coded by valuation vs Naples"></div>
         <div class="globe-legend">
           <span><i class="swatch" style="background:#c9a227"></i>Naples base</span>
           <span><i class="swatch" style="background:#b5341f"></i>pricier than Naples</span>
@@ -114,7 +114,7 @@ function render(): void {
 
   if (!globeReady) {
     globeReady = true;
-    const el = document.querySelector<HTMLElement>('#globe');
+    const el = document.querySelector<HTMLElement>('#globemap');
     if (el) void mountGlobe(el, markets, pick);
   }
 }

@@ -6,7 +6,7 @@ import { globeValueByIso, type Market } from '../data/markets.ts';
 const NUMERIC_TO_ISO: Record<string, string> = {
   '840': 'US', '826': 'GB', '250': 'FR', '276': 'DE', '724': 'ES',
   '528': 'NL', '156': 'CN', '784': 'AE', '634': 'QA', '124': 'CA',
-  '076': 'BR', '032': 'AR', '152': 'CL', '170': 'CO', '380': 'IT',
+  '076': 'BR', '032': 'AR', '152': 'CL', '170': 'CO', '380': 'IT', '643': 'RU',
 };
 
 function colorFor(v: number | undefined): string {
@@ -87,4 +87,5 @@ export async function mountGlobe(
   });
   void (chain['onPolygonHover'] as (f: (x: unknown | null) => void) => unknown)(() => undefined);
   void (chain['autoRotateSpeed'] as (v: number) => unknown)(0.6);
+  void (chain['autoRotate'] as (v: boolean) => unknown)(true);
 }

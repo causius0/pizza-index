@@ -48,6 +48,7 @@ export const PIZZERIAS: Pizzeria[] = [
   { id: 'nap-mar-barcelona', name: 'NAP Mar', city: 'Barcelona', market: 'ES', website: 'https://napofficial.com/', certification: { source: 'AVPN', memberNumber: '869', certUrl: 'https://www.pizzanapoletana.org/en/associati/836-nap_mar' } },
   { id: 'beppe-amsterdam', name: 'Pizza Beppe 4', city: 'Amsterdam', market: 'NL', website: 'https://www.pizzabeppe.nl/', certification: { source: 'AVPN', memberNumber: '632', certUrl: 'https://www.pizzanapoletana.org/en/associati/586-pizza_beppe_4' } },
   { id: 'luigia-dubai', name: 'Luigia Dubai', city: 'Dubai', market: 'AE', website: 'https://www.luigia.ae/', certification: { source: 'AVPN', memberNumber: '700', certUrl: 'https://www.pizzanapoletana.org/en/associati/688-luigia_dubai' } },
+  { id: 'pizza22-moscow', name: 'Pizza 22 cm', city: 'Moscow (Solyanka)', market: 'RU', website: 'https://pizza22cm.ru/', certification: { source: 'AVPN', memberNumber: '911', certUrl: 'https://www.pizzanapoletana.org/en/associati/879-pizza_22_cm' } },
 ];
 
 export const OBSERVATIONS: Observation[] = [
@@ -67,4 +68,5 @@ export const OBSERVATIONS: Observation[] = [
   { pizzeriaId: 'nap-frankfurt', price: 13.0, currency: 'EUR', source: 'Official menu PDF via napofficial.de', sourceUrl: 'https://weur-cdn.speisekarte.menu/storage/media/companies_menu_pdf/108492904/nap-neapolitan-authentic-pizza-frankfurt-am-main-speisekarte.pdf', observedAt: '2026-09-04', confidence: 'MED' },
   { pizzeriaId: 'nap-mar-barcelona', price: 8.9, currency: 'EUR', source: 'Uber Eats official store menu (JSON-LD)', sourceUrl: 'https://www.ubereats.com/es-en/store/nap-mar-barceloneta/ipvkxpO9RJq1hBnkJcfstw', observedAt: '2026-09-04', confidence: 'MED' },
   { pizzeriaId: 'beppe-amsterdam', price: 10.95, currency: 'EUR', source: 'TheFork official menu mirror', sourceUrl: 'https://thefork.com/restaurant/pizza-beppe-middenweg-r461671', observedAt: '2026-09-04', confidence: 'MED', note: 'First NL restaurant accepted by AVPN' },
+  { pizzeriaId: 'pizza22-moscow', price: 550, currency: 'RUB', source: 'Official chain menu PDF Jun 2026 (Margherita 22)', sourceUrl: 'https://pizza22cm.ru/wp-content/uploads/2026/06/menu_pizza22_pizza_bk-2.pdf', observedAt: '2026-09-04', confidence: 'MED', note: 'Chain-wide menu; Moscow branch (Solyanka) AVPN #879' },
 ];

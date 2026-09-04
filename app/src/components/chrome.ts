@@ -5,7 +5,7 @@ import { BASE_EUR } from '../data/markets.ts';
 export function header(): string {
   return `<header class="top"><div class="wrap top-in">
     <div class="brand"><span class="brand-mark">◉</span> <strong>Margherita Index</strong></div>
-    <nav><a href="#globe">Globe</a><a href="#wages">Wages</a><a href="#data">Data</a><a href="#method">Method</a></nav>
+    <nav><a href="#world">Globe</a><a href="#wages">Wages</a><a href="#data">Data</a><a href="#method">Method</a></nav>
     <span class="fxdate">FX ${FX_DATE}</span>
   </div></header>`;
 }

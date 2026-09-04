@@ -20,6 +20,7 @@ export const FX: Record<string, FxEntry> = {
   CNY: { perEur: 7.85, src: 'indicative' },
   AED: { perEur: 4.266, src: 'indicative (EURUSD 1.1615 x 3.6725 peg)' },
   QAR: { perEur: 4.228, src: 'indicative (EURUSD 1.1615 x 3.64 peg)' },
+  RUB: { perEur: 97.44, src: 'CBR official 25 Aug 2026 (ECB suspended RUB)' },
 };
 
 export const USD_PER_EUR = FX['USD'].perEur;
