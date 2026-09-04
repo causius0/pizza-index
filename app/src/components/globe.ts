@@ -1,7 +1,5 @@
-// Interactive 3D globe (globe.gl): countries color-coded by valuation vs Naples.
-// Heavy deps load lazily so first paint stays fast. Polygons come from world-atlas
-// 110m via CDN at runtime; offline, the section shows a fallback note.
-import { globeValueByIso, type Market } from '../data/markets.ts';
+import type { GlobeInstance } from 'globe.gl';
+import type { Market } from '../data/markets.js';
 
 const NUMERIC_TO_ISO: Record<string, string> = {
   '840': 'US', '826': 'GB', '250': 'FR', '276': 'DE', '724': 'ES',
@@ -10,82 +8,73 @@ const NUMERIC_TO_ISO: Record<string, string> = {
 };
 
 function colorFor(v: number | undefined): string {
-  if (v === undefined) return '#ddd5c3'; // no data
-  if (Math.abs(v) < 1) return '#c9a227'; // base gold (Naples)
-  const t = Math.min(1, Math.abs(v) / 220);
-  if (v > 0) {
-    // cream -> tomato
-    const r = 181 + Math.round((214 - 181) * (1 - t));
-    return `rgb(${r},${Math.round(60 + 40 * (1 - t))},${Math.round(40 + 20 * (1 - t))})`;
-  }
-  const g = 120 + Math.round(60 * (1 - t));
-  return `rgb(40,${g},70)`;
+  if (v === undefined) return '#d8d2c4'; // no data: stone grey
+  if (Math.abs(v) < 0.5) return '#c9a227'; // base: gold
+  const t = Math.min(1, Math.abs(v) / 120); // cream -> pomodoro
+  const c0 = [246, 241, 232];
+  const c1 = [181, 52, 31];
+  const c = c0.map((a, i) => Math.round(a + (c1[i] - a) * t));
+  return `rgb(${c[0]},${c[1]},${c[2]})`;
+}
+
+interface LandFeature {
+  id: string;
+  properties: { name: string };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [k: string]: any;
 }
 
 export async function mountGlobe(
   el: HTMLElement,
   markets: Market[],
-  onPick: (marketKey: string) => void,
+  onPick: (key: string) => void,
 ): Promise<void> {
-  let Globe: unknown;
-  let topo: unknown;
-  try {
-    [{ default: Globe }, topo] = await Promise.all([
-      import('globe.gl'),
-      import('topojson-client'),
-    ]);
-  } catch {
-    el.innerHTML = '<p class="empty">Globe needs network access for its map tiles.</p>';
-    return;
+  const [{ default: Globe }, topojson, worldRes] = await Promise.all([
+    import('globe.gl'),
+    import('topojson-client'),
+    fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json'),
+  ]);
+  if (!worldRes.ok) throw new Error(`world-atlas ${worldRes.status}`);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const topo = (topojson as any);
+  const land = topo.feature(await worldRes.json(), 'countries') as unknown as {
+    features: LandFeature[];
+  };
+  const byIso = new Map<string, number>();
+  for (const m of markets) {
+    if (m.kind === 'country' && m.overUnderPct !== null) byIso.set(m.iso, m.overUnderPct);
   }
-  const values = globeValueByIso(markets);
-  const res = await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json');
-  const world = await res.json();
-  const feats = (topo as { feature: (t: unknown, o: unknown) => GeoJSON.FeatureCollection })
-    .feature(world, world.objects.countries).features;
+  const itVals = markets.filter((x) => x.iso === 'IT' && x.overUnderPct !== null);
+  if (itVals.length) {
+    byIso.set('IT', itVals.reduce((a, b) => a + (b.overUnderPct ?? 0), 0) / itVals.length);
+  }
+  const keyByIso = new Map(markets.filter((m) => m.kind === 'country').map((m) => [m.iso, m.key]));
 
-  const isoOf = (f: GeoJSON.Feature): string | null => {
-    const id = String((f.id ?? '')).padStart(3, '0');
-    return NUMERIC_TO_ISO[id] ?? null;
+  const w = Math.max(320, el.clientWidth || 640);
+  const globe: GlobeInstance = new Globe(el, { animateIn: false });
+  const mat = globe.globeMaterial() as unknown as {
+    color: { set: (c: string) => void };
   };
-  const keyFor = (iso: string): string | null => {
-    if (iso === 'IT') return 'IT-NAP';
-    return markets.some((m) => m.key === iso) ? iso : null;
-  };
-
-  const g = new (Globe as new (o: object) => {
-    (e: HTMLElement): unknown;
-    polygonsData(d: unknown): unknown;
-    polygonCapColor(f: (x: unknown) => string): unknown;
-    polygonSideColor(): unknown;
-    polygonStrokeColor(f: () => string): unknown;
-    polygonLabel(f: (x: unknown) => string): unknown;
-    onPolygonClick(f: (x: unknown) => void): unknown;
-    onPolygonHover(f: (x: unknown | null) => void): unknown;
-    autoRotateSpeed(v: number): unknown;
-  })({ animateIn: false });
-  (g as unknown as (e: HTMLElement) => void)(el);
-  const chain = g as unknown as Record<string, (...a: never[]) => unknown>;
-  void (chain['polygonsData'] as (d: unknown) => unknown)(feats);
-  void (chain['polygonCapColor'] as (f: (x: unknown) => string) => unknown)((x: unknown) => {
-    const iso = isoOf(x as GeoJSON.Feature);
-    return colorFor(iso ? values.get(iso) : undefined);
-  });
-  void (chain['polygonSideColor'] as () => unknown)();
-  void (chain['polygonStrokeColor'] as (f: () => string) => unknown)(() => '#8a8474');
-  void (chain['polygonLabel'] as (f: (x: unknown) => string) => unknown)((x: unknown) => {
-    const f = x as GeoJSON.Feature;
-    const iso = isoOf(f);
-    const name = (f.properties as Record<string, string> | null)?.['name'] ?? iso ?? '';
-    const v = iso ? values.get(iso) : undefined;
-    return `<b>${name}</b>${v !== undefined ? `<br/>${v >= 0 ? '+' : ''}${v.toFixed(0)}% vs Naples` : '<br/>no data'}`;
-  });
-  void (chain['onPolygonClick'] as (f: (x: unknown) => void) => unknown)((x: unknown) => {
-    const iso = isoOf(x as GeoJSON.Feature);
-    const key = iso ? keyFor(iso) : null;
-    if (key) onPick(key);
-  });
-  void (chain['onPolygonHover'] as (f: (x: unknown | null) => void) => unknown)(() => undefined);
-  void (chain['autoRotateSpeed'] as (v: number) => unknown)(0.6);
-  void (chain['autoRotate'] as (v: boolean) => unknown)(true);
+  mat.color.set('#efe7d6'); // parchment oceans to match the page
+  globe
+    .width(w)
+    .height(420)
+    .backgroundColor('rgba(0,0,0,0)')
+    .showAtmosphere(false)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    .polygonsData(land.features as any)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    .polygonCapColor((d: any) => colorFor(byIso.get(NUMERIC_TO_ISO[String(d.id).padStart(3, '0')])))
+    .polygonSideColor(() => 'rgba(0,0,0,0)')
+    .polygonStrokeColor(() => '#1c1714')
+    .polygonsTransitionDuration(0)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    .onPolygonClick((d: any) => {
+      const iso = NUMERIC_TO_ISO[String(d.id).padStart(3, '0')];
+      const key = iso ? keyByIso.get(iso) : undefined;
+      if (key) onPick(key);
+    })
+    .onPolygonHover(() => undefined);
+  globe.controls().autoRotate = true;
+  globe.controls().autoRotateSpeed = 0.6;
 }
