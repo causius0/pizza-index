@@ -48,7 +48,7 @@ function render(): void {
   ${hero(markets.length, topLine())}
   <main class="wrap">
     <div class="controls">
-      <input id="q" type="search" placeholder="Search markets…" value="${state.query.replace(/"/g, '&quot;')}">
+      <input id="q" type="search" placeholder="Search markets…" aria-label="Search markets" value="${state.query.replace(/"/g, '&quot;')}">
       <select id="sort" aria-label="Sort">
         <option value="overUnderPct"${state.sort === 'overUnderPct' ? ' selected' : ''}>Sort: vs Naples</option>
         <option value="avgEur"${state.sort === 'avgEur' ? ' selected' : ''}>Sort: price</option>
@@ -75,7 +75,7 @@ function render(): void {
     </div>
     ${wageSection(markets)}
     <div class="card" id="data"><h2>All markets</h2>
-      <p class="lede">Means across certified observations. Italy enters as three cities — Naples (€${BASE_EUR.toFixed(2)}, the base), Rome and Milan. FX ${FX_DATE}.</p>
+      <p class="lede">Means across certified observations. Italy enters as three cities — Naples (€${BASE_EUR.toFixed(2)}, the base), Rome and Milan. FX ${FX_DATE}.${rows.length !== markets.length ? ` Showing ${rows.length} of ${markets.length}.` : ''}</p>
       ${marketTable(rows, state.ccy, state.selected, state.sort)}</div>
     ${method()}
   </main>
