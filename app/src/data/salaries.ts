@@ -9,15 +9,16 @@ export interface Salary {
   source: string;
   medianMonthly?: number;
   medianSource?: string;
+  medianBasis?: 'gross' | 'net'; // when the median's basis differs from `basis`
 }
 
 export const WORK_HOURS_PER_MONTH = 176; // 22 days x 8h
 
 export const SALARIES: Salary[] = [
-  { iso: 'US', meanMonthly: 6779, currency: 'USD', basis: 'gross', source: 'Wikipedia/List of American countries by average wage (gross)', medianMonthly: 3602, medianSource: 'SSA 2023 median net wage $43,222/yr' },
-  { iso: 'GB', meanMonthly: 3734, currency: 'GBP', basis: 'gross', source: 'UNECE gross $4,772/mo 2024 → GBP @1.278' },
+  { iso: 'US', meanMonthly: 6779, currency: 'USD', basis: 'gross', source: 'Wikipedia/List of American countries by average wage (gross)', medianMonthly: 3602, medianSource: 'SSA 2023 median net wage $43,222/yr', medianBasis: 'net' },
+  { iso: 'GB', meanMonthly: 3734, currency: 'GBP', basis: 'gross', source: 'UNECE gross $4,772/mo 2024 → GBP @1.278', medianMonthly: 3119, medianSource: 'ONS ASHE 2024 median gross annual £37,430 FT', medianBasis: 'gross' },
   { iso: 'DE', meanMonthly: 4187, currency: 'EUR', basis: 'gross', source: 'UNECE gross $4,531/mo 2024 → EUR @1.082' },
-  { iso: 'FR', meanMonthly: 3742, currency: 'EUR', basis: 'gross', source: 'UNECE gross $4,049/mo 2024 → EUR @1.082' },
+  { iso: 'FR', meanMonthly: 3742, currency: 'EUR', basis: 'gross', source: 'UNECE gross $4,049/mo 2024 → EUR @1.082', medianMonthly: 2180, medianSource: 'INSEE 2023 median net EQTP private', medianBasis: 'net' },
   { iso: 'IT', meanMonthly: 2762, currency: 'EUR', basis: 'gross', source: 'UNECE gross $2,988/mo 2024 → EUR @1.082' },
   { iso: 'ES', meanMonthly: 2753, currency: 'EUR', basis: 'gross', source: 'UNECE gross $2,979/mo 2024 → EUR @1.082' },
   { iso: 'NL', meanMonthly: 4853, currency: 'EUR', basis: 'gross', source: 'UNECE gross $5,251/mo 2024 → EUR @1.082' },

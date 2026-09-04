@@ -25,11 +25,11 @@ export function wageSection(markets: Market[]): string {
         <td><strong>${m.label}</strong></td>
         <td class="num">${fmtNum(m.avgLocal)} ${m.currency}</td>
         <td class="num">${fmtNum(s.meanMonthly, 0)} ${s.currency}</td>
-        <td>${s.basis}</td>
+        <td>${s.basis}${s.medianBasis && s.medianBasis !== s.basis ? ` · med ${s.medianBasis}` : ''}</td>
         <td class="num">${s.medianMonthly !== undefined ? fmtNum(s.medianMonthly, 0) + ' ' + s.currency : '—'}</td>
         <td class="num"><strong>${hours < 1 ? Math.round(hours * 60) + ' min' : hours.toFixed(1) + ' h'}</strong></td>
       </tr>`).join('')}</tbody></table>
-      <p><small>Sources: ${[...new Set(rows.map((r) => r.s.source))].map((s) => esc(s)).join(' · ')}</small></p>
+      <p><small>Sources: ${[...new Set(rows.flatMap((r) => r.s.medianSource ? [r.s.source, r.s.medianSource] : [r.s.source]))].map((s) => esc(s)).join(' · ')}</small></p>
     </div>
   </div></section>`;
 }
