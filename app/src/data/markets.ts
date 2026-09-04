@@ -29,6 +29,11 @@ const COUNTRY_LABELS: Record<string, string> = {
   NL: 'Netherlands', CN: 'China', AE: 'UAE', QA: 'Qatar', US: 'United States',
   CA: 'Canada', BR: 'Brazil', AR: 'Argentina', CL: 'Chile', CO: 'Colombia',
   RU: 'Moscow',
+  AT: 'Austria', BE: 'Belgium', HR: 'Croatia', DK: 'Denmark', FI: 'Finland',
+  GR: 'Greece', IE: 'Ireland', LV: 'Latvia', LT: 'Lithuania', MT: 'Malta',
+  PL: 'Poland', PT: 'Portugal', CZ: 'Czechia', RO: 'Romania', SI: 'Slovenia',
+  SE: 'Sweden', HU: 'Hungary', AU: 'Australia', NZ: 'New Zealand',
+  SA: 'Saudi Arabia', EG: 'Egypt', KW: 'Kuwait', LY: 'Libya',
 };
 
 const byId = new Map<string, Pizzeria>(PIZZERIAS.map((p) => [p.id, p]));

@@ -13,6 +13,11 @@ const NATION_TO_ISO: Record<string, string> = {
   'Paesi Bassi (Olanda)': 'NL', Cina: 'CN', 'Emirati Arabi Uniti': 'AE', Qatar: 'QA',
   "Stati Uniti d'America - USA": 'US', Canada: 'CA', Brasile: 'BR', Argentina: 'AR',
   Cile: 'CL', Colombia: 'CO', Russia: 'RU',
+  Austria: 'AT', Belgio: 'BE', Croazia: 'HR', Danimarca: 'DK', Finlandia: 'FI',
+  Grecia: 'GR', Irlanda: 'IE', Lettonia: 'LV', Lituania: 'LT', Malta: 'MT',
+  Polonia: 'PL', Portogallo: 'PT', 'Repubblica Ceca': 'CZ', Romania: 'RO',
+  Slovenia: 'SI', Svezia: 'SE', Ungheria: 'HU', Australia: 'AU',
+  'Nuova Zelanda': 'NZ', 'Arabia Saudita': 'SA', Egitto: 'EG', Kuwait: 'KW', Libia: 'LY',
 };
 
 export const MEMBERS = membersJson as AvpnMember[];
