@@ -15,8 +15,12 @@ interface State {
   selected: string | null;
 }
 
-const state: State = { query: '', sort: 'overUnderPct', ccy: 'EUR', selected: 'US' };
+const params = new URLSearchParams(location.search);
+const initialSelected = params.get('market');
+
+const state: State = { query: '', sort: 'overUnderPct', ccy: 'EUR', selected: initialSelected ?? 'US' };
 const markets = computeMarkets();
+if (initialSelected && !markets.some((m) => m.key === initialSelected)) state.selected = 'US';
 let globeNode: HTMLElement | null = null;
 
 function visible(): Market[] {
@@ -101,6 +105,9 @@ function render(): void {
     }));
   const pick = (key: string): void => {
     state.selected = key;
+    const url = new URL(location.href);
+    url.searchParams.set('market', key);
+    history.replaceState(null, '', url);
     render();
     document.querySelector('#detail')?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
   };

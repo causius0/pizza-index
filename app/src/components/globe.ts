@@ -61,6 +61,8 @@ export async function mountGlobe(
 
   const w = Math.max(320, el.clientWidth || 640);
   const globe: GlobeInstance = new Globe(el, { animateIn: false });
+  // Open on Europe, where most priced cities cluster; auto-rotate takes over.
+  globe.pointOfView({ lat: 34, lng: 12, altitude: 2.1 });
   const mat = globe.globeMaterial() as unknown as {
     color: { set: (c: string) => void };
   };
