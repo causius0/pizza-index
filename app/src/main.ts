@@ -2,13 +2,11 @@ import './style.css';
 import { FX_DATE } from './data/fx.ts';
 import { BASE_EUR, BASE_KEY, computeMarkets, type Market } from './data/markets.ts';
 import { header, hero, method, footer } from './components/chrome.ts';
-import { marketTable, type DisplayCcy } from './components/table.ts';
+import { marketTable, type DisplayCcy, type SortKey } from './components/table.ts';
 import { detailPanel } from './components/detail.ts';
 import { wageSection } from './components/wages.ts';
 import { mountGlobe } from './components/globe.ts';
 import { fmtSignedPct } from './lib/format.ts';
-
-type SortKey = 'overUnderPct' | 'avgEur' | 'nCertified' | 'label';
 
 interface State {
   query: string;
@@ -69,6 +67,7 @@ function render(): void {
         <div class="globe-legend">
           <span><i class="swatch" style="background:#c9a227"></i>Naples base</span>
           <span><i class="swatch" style="background:#b5341f"></i>pricier than Naples</span>
+          <span><i class="swatch dot"></i>priced pizzeria — hover for name, click for market</span>
           <span><i class="swatch" style="background:#d8d2c4"></i>no data yet</span>
         </div>
       </div>
@@ -77,7 +76,7 @@ function render(): void {
     ${wageSection(markets)}
     <div class="card" id="data"><h2>All markets</h2>
       <p class="lede">Means across certified observations. Italy enters as three cities — Naples (€${BASE_EUR.toFixed(2)}, the base), Rome and Milan. FX ${FX_DATE}.</p>
-      ${marketTable(rows, state.ccy, state.selected)}</div>
+      ${marketTable(rows, state.ccy, state.selected, state.sort)}</div>
     ${method()}
   </main>
   ${footer()}`;
@@ -105,8 +104,30 @@ function render(): void {
     render();
     document.querySelector('#detail')?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
   };
-  document.querySelectorAll('tbody tr[data-key]').forEach((tr) =>
-    tr.addEventListener('click', () => pick((tr as HTMLTableRowElement).dataset.key!)));
+  document.querySelectorAll('tbody tr[data-key]').forEach((tr) => {
+    const key = (tr as HTMLTableRowElement).dataset.key!;
+    tr.addEventListener('click', () => pick(key));
+    tr.addEventListener('keydown', (e) => {
+      if ((e as KeyboardEvent).key === 'Enter' || (e as KeyboardEvent).key === ' ') {
+        e.preventDefault();
+        pick(key);
+      }
+    });
+  });
+  const sortBy = (key: string): void => {
+    state.sort = key as SortKey;
+    render();
+  };
+  document.querySelectorAll('th[data-sort]').forEach((th) => {
+    const key = (th as HTMLElement).dataset.sort!;
+    th.addEventListener('click', () => sortBy(key));
+    th.addEventListener('keydown', (e) => {
+      if ((e as KeyboardEvent).key === 'Enter' || (e as KeyboardEvent).key === ' ') {
+        e.preventDefault();
+        sortBy(key);
+      }
+    });
+  });
   document.querySelector('#dclose')?.addEventListener('click', () => {
     state.selected = null;
     render();
@@ -116,9 +137,19 @@ function render(): void {
     const el = document.querySelector<HTMLElement>('#globemap');
     if (el) {
       globeNode = el;
-      void mountGlobe(el, markets, pick).catch(() => {
-        globeNode = null;
-      });
+      el.innerHTML = '<p class="globe-loading">Loading map…</p>';
+      // Mount only when scrolled near: the 3D chunk + map tiles are heavy.
+      const io = new IntersectionObserver((entries, obs) => {
+        if (!entries[0].isIntersecting) return;
+        obs.disconnect();
+        void mountGlobe(el, markets, pick)
+          .then(() => el.querySelector('.globe-loading')?.remove())
+          .catch(() => {
+            globeNode = null; // retry on next render
+            el.innerHTML = '<p class="globe-fallback">Map tiles failed to load — check your connection. Every figure is in the table below.</p>';
+          });
+      }, { rootMargin: '300px' });
+      io.observe(el);
     }
   } else {
     // Re-attach the live globe (with its WebGL context) instead of remounting.

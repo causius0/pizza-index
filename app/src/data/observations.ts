@@ -10,6 +10,8 @@ export interface Pizzeria {
   id: string;
   name: string;
   city: string;
+  lat: number;
+  lng: number;
   /** Market key: ISO for countries, IT-NAP/IT-ROM/IT-MIL for Italian cities */
   market: string;
   website?: string;
@@ -29,26 +31,26 @@ export interface Observation {
 }
 
 export const PIZZERIAS: Pizzeria[] = [
-  { id: 'naples-base', name: 'Naples neighbourhood pizzeria (representative)', city: 'Napoli', market: 'IT-NAP', certification: { source: 'AVPN', certUrl: 'https://www.pizzanapoletana.org/en/' } },
-  { id: 'kalo-roma', name: '50 Kalò di Ciro Salvo Roma', city: 'Roma', market: 'IT-ROM', certification: { source: 'AVPN', memberNumber: '1000', certUrl: 'https://www.pizzanapoletana.org/en/associati/971-50_kalo_di_ciro_salvo' } },
-  { id: 'starita-milano', name: 'Starita a Milano', city: 'Milano', market: 'IT-MIL', certification: { source: 'AVPN', memberNumber: '600', certUrl: 'https://www.pizzanapoletana.org/en/associati/584-starita_a_milano' } },
-  { id: 'damichele-london', name: "L'Antica Pizzeria da Michele", city: 'London', market: 'GB', website: 'https://www.damichele.co.uk/', certification: { source: 'AVPN', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
-  { id: 'kalo-london', name: '50 Kalò di Ciro Salvo London', city: 'London', market: 'GB', certification: { source: 'AVPN', memberNumber: '750', certUrl: 'https://www.pizzanapoletana.org/en/associati/755-50_kalo_di_ciro_salvo_london' } },
-  { id: 'ribalta-nyc', name: 'Ribalta', city: 'New York City', market: 'US', website: 'https://www.ribaltapizzanapoli.com/', certification: { source: 'AVPN', memberNumber: '459', certUrl: 'https://www.pizzanapoletana.org/en/associati/405-ribalta' } },
-  { id: 'libretto-ossington', name: 'Pizzeria Libretto (Ossington)', city: 'Toronto', market: 'CA', website: 'https://pizzerialibretto.com/', certification: { source: 'AVPN', memberNumber: '291', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
-  { id: 'bottega-shanghai', name: 'Bottega', city: 'Shanghai', market: 'CN', certification: { source: 'AVPN', memberNumber: '1040', certUrl: 'https://www.pizzanapoletana.org/en/associati/1019-bottega' } },
-  { id: 'leggera-sp', name: 'Leggera Pizza Napoletana', city: 'São Paulo', market: 'BR', website: 'https://www.pizzerialeggera.com.br/', certification: { source: 'AVPN', memberNumber: '472', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
-  { id: 'siamo-nel-forno', name: 'Siamo nel Forno', city: 'Buenos Aires', market: 'AR', certification: { source: 'AVPN', memberNumber: '425', certUrl: 'https://www.pizzanapoletana.org/es/associati/370-siamo_nel_forno' } },
-  { id: 'michele-ba', name: 'Michele Pizza e Amore', city: 'Berazategui', market: 'AR', certification: { source: 'AVPN', memberNumber: '1085', certUrl: 'https://www.pizzanapoletana.org/en/associati/1105-michele_pizza_e_amore' } },
-  { id: 'pizzardi-bogota', name: 'Pizzardi Artigianale', city: 'Bogotá', market: 'CO', certification: { source: 'AVPN', memberNumber: '1067', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
-  { id: 'brunapoli-santiago', name: 'Brunapoli', city: 'Santiago', market: 'CL', website: 'https://www.brunapoli.cl/', certification: { source: 'AVPN', memberNumber: '637', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
-  { id: 'bianco-doha', name: 'Bianco Ristorante', city: 'Doha', market: 'QA', website: 'https://eatbianco.com/', certification: { source: 'AVPN', memberNumber: '1113', certUrl: 'https://www.pizzanapoletana.org/en/associati/1175-bianco_ristorante' } },
-  { id: 'grasso-paris', name: 'Guillaume Grasso — La Vera Pizza Napoletana', city: 'Paris', market: 'FR', website: 'https://www.guillaume-grasso.com/', certification: { source: 'AVPN', memberNumber: '718', certUrl: 'https://www.pizzanapoletana.org/en/associati/675-guillaume_grassola_vera_pizza_napoletana' } },
-  { id: 'nap-frankfurt', name: 'NAP — Neapolitan Authentic Pizza', city: 'Frankfurt am Main', market: 'DE', website: 'https://napofficial.de/', certification: { source: 'AVPN', memberNumber: '1224', certUrl: 'https://www.pizzanapoletana.org/en/associati/1591-nap__neapolitan_authentic_pizza' } },
-  { id: 'nap-mar-barcelona', name: 'NAP Mar', city: 'Barcelona', market: 'ES', website: 'https://napofficial.com/', certification: { source: 'AVPN', memberNumber: '869', certUrl: 'https://www.pizzanapoletana.org/en/associati/836-nap_mar' } },
-  { id: 'beppe-amsterdam', name: 'Pizza Beppe 4', city: 'Amsterdam', market: 'NL', website: 'https://www.pizzabeppe.nl/', certification: { source: 'AVPN', memberNumber: '632', certUrl: 'https://www.pizzanapoletana.org/en/associati/586-pizza_beppe_4' } },
-  { id: 'luigia-dubai', name: 'Luigia Dubai', city: 'Dubai', market: 'AE', website: 'https://www.luigia.ae/', certification: { source: 'AVPN', memberNumber: '700', certUrl: 'https://www.pizzanapoletana.org/en/associati/688-luigia_dubai' } },
-  { id: 'pizza22-moscow', name: 'Pizza 22 cm', city: 'Moscow (Solyanka)', market: 'RU', website: 'https://pizza22cm.ru/', certification: { source: 'AVPN', memberNumber: '911', certUrl: 'https://www.pizzanapoletana.org/en/associati/879-pizza_22_cm' } },
+  { id: 'naples-base', name: 'Naples neighbourhood pizzeria (representative)', city: 'Napoli', lat: 40.852, lng: 14.268, market: 'IT-NAP', certification: { source: 'AVPN', certUrl: 'https://www.pizzanapoletana.org/en/' } },
+  { id: 'kalo-roma', name: '50 Kalò di Ciro Salvo Roma', city: 'Roma', lat: 41.903, lng: 12.496, market: 'IT-ROM', certification: { source: 'AVPN', memberNumber: '1000', certUrl: 'https://www.pizzanapoletana.org/en/associati/971-50_kalo_di_ciro_salvo' } },
+  { id: 'starita-milano', name: 'Starita a Milano', city: 'Milano', lat: 45.464, lng: 9.19, market: 'IT-MIL', certification: { source: 'AVPN', memberNumber: '600', certUrl: 'https://www.pizzanapoletana.org/en/associati/584-starita_a_milano' } },
+  { id: 'damichele-london', name: "L'Antica Pizzeria da Michele", city: 'London', lat: 51.507, lng: -0.128, market: 'GB', website: 'https://www.damichele.co.uk/', certification: { source: 'AVPN', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
+  { id: 'kalo-london', name: '50 Kalò di Ciro Salvo London', city: 'London', lat: 51.507, lng: -0.128, market: 'GB', certification: { source: 'AVPN', memberNumber: '750', certUrl: 'https://www.pizzanapoletana.org/en/associati/755-50_kalo_di_ciro_salvo_london' } },
+  { id: 'ribalta-nyc', name: 'Ribalta', city: 'New York City', lat: 40.713, lng: -74.006, market: 'US', website: 'https://www.ribaltapizzanapoli.com/', certification: { source: 'AVPN', memberNumber: '459', certUrl: 'https://www.pizzanapoletana.org/en/associati/405-ribalta' } },
+  { id: 'libretto-ossington', name: 'Pizzeria Libretto (Ossington)', city: 'Toronto', lat: 43.653, lng: -79.383, market: 'CA', website: 'https://pizzerialibretto.com/', certification: { source: 'AVPN', memberNumber: '291', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
+  { id: 'bottega-shanghai', name: 'Bottega', city: 'Shanghai', lat: 31.23, lng: 121.473, market: 'CN', certification: { source: 'AVPN', memberNumber: '1040', certUrl: 'https://www.pizzanapoletana.org/en/associati/1019-bottega' } },
+  { id: 'leggera-sp', name: 'Leggera Pizza Napoletana', city: 'São Paulo', lat: -23.555, lng: -46.633, market: 'BR', website: 'https://www.pizzerialeggera.com.br/', certification: { source: 'AVPN', memberNumber: '472', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
+  { id: 'siamo-nel-forno', name: 'Siamo nel Forno', city: 'Buenos Aires', lat: -34.604, lng: -58.382, market: 'AR', certification: { source: 'AVPN', memberNumber: '425', certUrl: 'https://www.pizzanapoletana.org/es/associati/370-siamo_nel_forno' } },
+  { id: 'michele-ba', name: 'Michele Pizza e Amore', city: 'Berazategui', lat: -34.763, lng: -58.211, market: 'AR', certification: { source: 'AVPN', memberNumber: '1085', certUrl: 'https://www.pizzanapoletana.org/en/associati/1105-michele_pizza_e_amore' } },
+  { id: 'pizzardi-bogota', name: 'Pizzardi Artigianale', city: 'Bogotá', lat: 4.711, lng: -74.072, market: 'CO', certification: { source: 'AVPN', memberNumber: '1067', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
+  { id: 'brunapoli-santiago', name: 'Brunapoli', city: 'Santiago', lat: -33.448, lng: -70.669, market: 'CL', website: 'https://www.brunapoli.cl/', certification: { source: 'AVPN', memberNumber: '637', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
+  { id: 'bianco-doha', name: 'Bianco Ristorante', city: 'Doha', lat: 25.286, lng: 51.533, market: 'QA', website: 'https://eatbianco.com/', certification: { source: 'AVPN', memberNumber: '1113', certUrl: 'https://www.pizzanapoletana.org/en/associati/1175-bianco_ristorante' } },
+  { id: 'grasso-paris', name: 'Guillaume Grasso — La Vera Pizza Napoletana', city: 'Paris', lat: 48.857, lng: 2.352, market: 'FR', website: 'https://www.guillaume-grasso.com/', certification: { source: 'AVPN', memberNumber: '718', certUrl: 'https://www.pizzanapoletana.org/en/associati/675-guillaume_grassola_vera_pizza_napoletana' } },
+  { id: 'nap-frankfurt', name: 'NAP — Neapolitan Authentic Pizza', city: 'Frankfurt am Main', lat: 50.111, lng: 8.684, market: 'DE', website: 'https://napofficial.de/', certification: { source: 'AVPN', memberNumber: '1224', certUrl: 'https://www.pizzanapoletana.org/en/associati/1591-nap__neapolitan_authentic_pizza' } },
+  { id: 'nap-mar-barcelona', name: 'NAP Mar', city: 'Barcelona', lat: 41.388, lng: 2.159, market: 'ES', website: 'https://napofficial.com/', certification: { source: 'AVPN', memberNumber: '869', certUrl: 'https://www.pizzanapoletana.org/en/associati/836-nap_mar' } },
+  { id: 'beppe-amsterdam', name: 'Pizza Beppe 4', city: 'Amsterdam', lat: 52.368, lng: 4.904, market: 'NL', website: 'https://www.pizzabeppe.nl/', certification: { source: 'AVPN', memberNumber: '632', certUrl: 'https://www.pizzanapoletana.org/en/associati/586-pizza_beppe_4' } },
+  { id: 'luigia-dubai', name: 'Luigia Dubai', city: 'Dubai', lat: 25.204, lng: 55.271, market: 'AE', website: 'https://www.luigia.ae/', certification: { source: 'AVPN', memberNumber: '700', certUrl: 'https://www.pizzanapoletana.org/en/associati/688-luigia_dubai' } },
+  { id: 'pizza22-moscow', name: 'Pizza 22 cm', city: 'Moscow (Solyanka)', lat: 55.756, lng: 37.615, market: 'RU', website: 'https://pizza22cm.ru/', certification: { source: 'AVPN', memberNumber: '911', certUrl: 'https://www.pizzanapoletana.org/en/associati/879-pizza_22_cm' } },
 ];
 
 export const OBSERVATIONS: Observation[] = [

@@ -1,5 +1,7 @@
 import type { GlobeInstance } from 'globe.gl';
 import type { Market } from '../data/markets.js';
+import { PIZZERIAS, OBSERVATIONS } from '../data/observations.js';
+import { fmtNum } from '../lib/format.js';
 
 const NUMERIC_TO_ISO: Record<string, string> = {
   '840': 'US', '826': 'GB', '250': 'FR', '276': 'DE', '724': 'ES',
@@ -50,6 +52,13 @@ export async function mountGlobe(
   }
   const keyByIso = new Map(markets.filter((m) => m.kind === 'country').map((m) => [m.iso, m.key]));
 
+  // City dots: one per priced pizzeria. Hover names it, click opens its market.
+  const obsByPiz = new Map(OBSERVATIONS.filter((o) => o.includeInAverage !== false).map((o) => [o.pizzeriaId, o]));
+  const dots = PIZZERIAS.filter((p) => obsByPiz.has(p.id)).map((p) => {
+    const o = obsByPiz.get(p.id)!;
+    return { ...p, price: o.price, currency: o.currency };
+  });
+
   const w = Math.max(320, el.clientWidth || 640);
   const globe: GlobeInstance = new Globe(el, { animateIn: false });
   const mat = globe.globeMaterial() as unknown as {
@@ -74,7 +83,19 @@ export async function mountGlobe(
       const key = iso ? keyByIso.get(iso) : undefined;
       if (key) onPick(key);
     })
-    .onPolygonHover(() => undefined);
+    .onPolygonHover(() => undefined)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    .pointsData(dots as any)
+    .pointAltitude(0.015)
+    .pointRadius(0.55)
+    .pointColor(() => '#b5341f')
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    .pointLabel((d: any) => `${d.name} · ${d.city} — ${fmtNum(d.price)} ${d.currency}`)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    .onPointClick((d: any) => {
+      if (d && d.market) onPick(d.market);
+    });
   globe.controls().autoRotate = true;
   globe.controls().autoRotateSpeed = 0.6;
+  (window as unknown as { __globe?: GlobeInstance }).__globe = globe;
 }

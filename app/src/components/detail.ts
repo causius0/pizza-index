@@ -1,5 +1,6 @@
 import type { Market } from '../data/markets.ts';
 import { observationsFor, membersFor } from '../data/markets.ts';
+import { FX } from '../data/fx.ts';
 import { fmtNum, fmtSignedPct, esc } from '../lib/format.ts';
 
 export function detailPanel(m: Market | undefined): string {
@@ -7,6 +8,7 @@ export function detailPanel(m: Market | undefined): string {
   const obs = observationsFor(m.key);
   const members = membersFor(m);
   const shown = members.slice(0, 20);
+  const fx = m.currency && FX[m.currency] ? FX[m.currency] : null;
   return `<div class="detail-head">
       <h2>${esc(m.label)} <span class="flag">${m.key}</span></h2>
       <button id="dclose" aria-label="Close">×</button>
@@ -18,6 +20,7 @@ export function detailPanel(m: Market | undefined): string {
       <div><span>In euros</span><strong>${m.avgEur !== null ? '€' + fmtNum(m.avgEur) : '—'}</strong></div>
       <div><span>vs Naples</span><strong>${fmtSignedPct(m.overUnderPct)}</strong></div>
     </div>
+    ${fx && m.currency !== 'EUR' ? `<p class="fxline">€1 = ${fmtNum(fx.perEur)} ${m.currency} · ${esc(fx.src)}</p>` : ''}
     <h3>Observations</h3>
     ${obs.length ? `<ul class="obs">${obs.map(({ p, o }) => `<li>
       <strong>${esc(p.name)}</strong> <span class="conf ${o.confidence}">${o.confidence}</span>${o.includeInAverage === false ? ' <em>excluded from average</em>' : ''}<br>
