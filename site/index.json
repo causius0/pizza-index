@@ -1,0 +1,393 @@
+{
+ "fxDate": "2026-09-03",
+ "base": {
+  "country": "IT",
+  "priceEur": 6
+ },
+ "rows": [
+  {
+   "country": "AE",
+   "currency": "",
+   "nCertified": 4,
+   "nPriced": 0,
+   "avgLocal": null,
+   "avgEur": null,
+   "impliedPpp": null,
+   "actualFx": null,
+   "overUnderPct": null
+  },
+  {
+   "country": "AR",
+   "currency": "ARS",
+   "nCertified": 2,
+   "nPriced": 1,
+   "avgLocal": 21800,
+   "avgEur": 13.903061224489797,
+   "impliedPpp": 3633.3333333333335,
+   "actualFx": 1568,
+   "overUnderPct": 131.71768707482994
+  },
+  {
+   "country": "BR",
+   "currency": "BRL",
+   "nCertified": 34,
+   "nPriced": 1,
+   "avgLocal": 74,
+   "avgEur": 11.746031746031747,
+   "impliedPpp": 12.333333333333334,
+   "actualFx": 6.3,
+   "overUnderPct": 95.76719576719577
+  },
+  {
+   "country": "CA",
+   "currency": "CAD",
+   "nCertified": 47,
+   "nPriced": 1,
+   "avgLocal": 19,
+   "avgEur": 11.875,
+   "impliedPpp": 3.1666666666666665,
+   "actualFx": 1.6,
+   "overUnderPct": 97.91666666666666
+  },
+  {
+   "country": "CL",
+   "currency": "CLP",
+   "nCertified": 7,
+   "nPriced": 1,
+   "avgLocal": 8900,
+   "avgEur": 8.068902991840435,
+   "impliedPpp": 1483.3333333333333,
+   "actualFx": 1103,
+   "overUnderPct": 34.481716530673914
+  },
+  {
+   "country": "CN",
+   "currency": "",
+   "nCertified": 5,
+   "nPriced": 0,
+   "avgLocal": null,
+   "avgEur": null,
+   "impliedPpp": null,
+   "actualFx": null,
+   "overUnderPct": null
+  },
+  {
+   "country": "CO",
+   "currency": "COP",
+   "nCertified": 3,
+   "nPriced": 1,
+   "avgLocal": 44900,
+   "avgEur": 9.782135076252723,
+   "impliedPpp": 7483.333333333333,
+   "actualFx": 4590,
+   "overUnderPct": 63.03558460421205
+  },
+  {
+   "country": "DE",
+   "currency": "",
+   "nCertified": 9,
+   "nPriced": 0,
+   "avgLocal": null,
+   "avgEur": null,
+   "impliedPpp": null,
+   "actualFx": null,
+   "overUnderPct": null
+  },
+  {
+   "country": "ES",
+   "currency": "",
+   "nCertified": 13,
+   "nPriced": 0,
+   "avgLocal": null,
+   "avgEur": null,
+   "impliedPpp": null,
+   "actualFx": null,
+   "overUnderPct": null
+  },
+  {
+   "country": "FR",
+   "currency": "",
+   "nCertified": 19,
+   "nPriced": 0,
+   "avgLocal": null,
+   "avgEur": null,
+   "impliedPpp": null,
+   "actualFx": null,
+   "overUnderPct": null
+  },
+  {
+   "country": "GB",
+   "currency": "GBP",
+   "nCertified": 38,
+   "nPriced": 1,
+   "avgLocal": 14.99,
+   "avgEur": 17.41909244088083,
+   "impliedPpp": 2.4983333333333335,
+   "actualFx": 0.86055,
+   "overUnderPct": 190.31820734801389
+  },
+  {
+   "country": "IT",
+   "currency": "EUR",
+   "nCertified": 250,
+   "nPriced": 1,
+   "avgLocal": 6,
+   "avgEur": 6,
+   "impliedPpp": 1,
+   "actualFx": 1,
+   "overUnderPct": 0
+  },
+  {
+   "country": "NL",
+   "currency": "",
+   "nCertified": 22,
+   "nPriced": 0,
+   "avgLocal": null,
+   "avgEur": null,
+   "impliedPpp": null,
+   "actualFx": null,
+   "overUnderPct": null
+  },
+  {
+   "country": "QA",
+   "currency": "",
+   "nCertified": 1,
+   "nPriced": 0,
+   "avgLocal": null,
+   "avgEur": null,
+   "impliedPpp": null,
+   "actualFx": null,
+   "overUnderPct": null
+  },
+  {
+   "country": "US",
+   "currency": "USD",
+   "nCertified": 100,
+   "nPriced": 1,
+   "avgLocal": 18,
+   "avgEur": 15.497201894102455,
+   "impliedPpp": 3,
+   "actualFx": 1.1615,
+   "overUnderPct": 158.2866982350409
+  }
+ ],
+ "pizzerias": [
+  {
+   "id": "keste-nyc",
+   "name": "Kestè Pizza & Vino",
+   "city": "New York City",
+   "country": "US",
+   "website": "https://kestepizzeria.com/",
+   "certification": {
+    "source": "Unverified",
+    "certUrl": "https://www.pizzanapoletana.org/en/associati"
+   }
+  },
+  {
+   "id": "ribalta-nyc",
+   "name": "Ribalta",
+   "city": "New York City",
+   "country": "US",
+   "website": "https://www.ribaltapizzanapoli.com/",
+   "certification": {
+    "source": "AVPN",
+    "memberNumber": "459",
+    "certUrl": "https://www.pizzanapoletana.org/en/associati/405-ribalta"
+   }
+  },
+  {
+   "id": "libretto-ossington",
+   "name": "Pizzeria Libretto (Ossington)",
+   "city": "Toronto",
+   "country": "CA",
+   "website": "https://pizzerialibretto.com/",
+   "certification": {
+    "source": "AVPN",
+    "memberNumber": "291",
+    "certUrl": "https://www.pizzanapoletana.org/en/associati"
+   }
+  },
+  {
+   "id": "damichele-london",
+   "name": "L'Antica Pizzeria da Michele",
+   "city": "London",
+   "country": "GB",
+   "website": "https://www.damichele.co.uk/",
+   "certification": {
+    "source": "AVPN",
+    "certUrl": "https://www.pizzanapoletana.org/en/associati"
+   }
+  },
+  {
+   "id": "kalò-london",
+   "name": "50 Kalò di Ciro Salvo London",
+   "city": "London",
+   "country": "GB",
+   "certification": {
+    "source": "AVPN",
+    "memberNumber": "750",
+    "certUrl": "https://www.pizzanapoletana.org/en/associati/755-50_kalo_di_ciro_salvo_london"
+   }
+  },
+  {
+   "id": "leggera-sp",
+   "name": "Leggera Pizza Napoletana",
+   "city": "São Paulo",
+   "country": "BR",
+   "website": "https://www.pizzerialeggera.com.br/",
+   "certification": {
+    "source": "AVPN",
+    "memberNumber": "472",
+    "certUrl": "https://www.pizzanapoletana.org/en/associati"
+   }
+  },
+  {
+   "id": "michele-ba",
+   "name": "Michele Pizza e Amore",
+   "city": "Berazategui",
+   "country": "AR",
+   "certification": {
+    "source": "AVPN",
+    "memberNumber": "1085",
+    "certUrl": "https://www.pizzanapoletana.org/en/associati/1105-michele_pizza_e_amore"
+   }
+  },
+  {
+   "id": "siamo-nel-forno",
+   "name": "Siamo nel Forno",
+   "city": "Buenos Aires",
+   "country": "AR",
+   "certification": {
+    "source": "AVPN",
+    "memberNumber": "425",
+    "certUrl": "https://www.pizzanapoletana.org/es/associati/370-siamo_nel_forno"
+   }
+  },
+  {
+   "id": "pizzardi-bogota",
+   "name": "Pizzardi Artigianale",
+   "city": "Bogotá",
+   "country": "CO",
+   "certification": {
+    "source": "AVPN",
+    "memberNumber": "1067",
+    "certUrl": "https://www.pizzanapoletana.org/en/associati"
+   }
+  },
+  {
+   "id": "brunapoli-santiago",
+   "name": "Brunapoli",
+   "city": "Santiago",
+   "country": "CL",
+   "website": "https://www.brunapoli.cl/",
+   "certification": {
+    "source": "AVPN",
+    "memberNumber": "637",
+    "certUrl": "https://www.pizzanapoletana.org/en/associati"
+   }
+  },
+  {
+   "id": "bianco-doha",
+   "name": "Bianco Ristorante",
+   "city": "Doha",
+   "country": "QA",
+   "website": "https://eatbianco.com/",
+   "certification": {
+    "source": "AVPN",
+    "memberNumber": "1113",
+    "certUrl": "https://www.pizzanapoletana.org/en/associati/1175-bianco_ristorante"
+   }
+  },
+  {
+   "id": "naples-base",
+   "name": "Naples neighbourhood pizzeria (representative)",
+   "city": "Napoli",
+   "country": "IT",
+   "certification": {
+    "source": "AVPN",
+    "certUrl": "https://www.pizzanapoletana.org/en/"
+   }
+  }
+ ],
+ "observations": [
+  {
+   "pizzeriaId": "naples-base",
+   "price": 6,
+   "currency": "EUR",
+   "source": "OpenPizzaMap Naples 2026 guide + pizzadixit.com (€5–6 neighbourhood, €6–7 historic)",
+   "observedAt": "2026-09-04",
+   "confidence": "HIGH",
+   "note": "Index base"
+  },
+  {
+   "pizzeriaId": "damichele-london",
+   "price": 14.99,
+   "currency": "GBP",
+   "source": "https://eateasy.co.uk/.../Lantica-Pizzeria-Da-Michele-W1D-4TY-menu.php",
+   "observedAt": "2026-09-04",
+   "confidence": "HIGH"
+  },
+  {
+   "pizzeriaId": "keste-nyc",
+   "price": 19.2,
+   "currency": "USD",
+   "source": "https://kestepizzeria.com/menu/",
+   "observedAt": "2026-09-04",
+   "confidence": "HIGH",
+   "note": "NOT in AVPN directory — excluded from certified average",
+   "includeInAverage": false
+  },
+  {
+   "pizzeriaId": "ribalta-nyc",
+   "price": 18,
+   "currency": "USD",
+   "source": "https://allmenus.com/ny/new-york/337447-ribalta-pizza/menu (Margherita STG: tomato, imported fior di latte, basil)",
+   "observedAt": "2026-09-04",
+   "confidence": "HIGH",
+   "note": "Cross-check prix.nyc Restaurant Week: Pizza Margherita normally $22"
+  },
+  {
+   "pizzeriaId": "libretto-ossington",
+   "price": 19,
+   "currency": "CAD",
+   "source": "https://pizzerialibretto.com/menus",
+   "observedAt": "2026-09-04",
+   "confidence": "HIGH"
+  },
+  {
+   "pizzeriaId": "leggera-sp",
+   "price": 74,
+   "currency": "BRL",
+   "source": "https://www.pizzerialeggera.com.br/cardapio/cardapio.pdf",
+   "observedAt": "2026-09-04",
+   "confidence": "HIGH"
+  },
+  {
+   "pizzeriaId": "michele-ba",
+   "price": 21800,
+   "currency": "ARS",
+   "source": "Facebook promo (half-price ARS 10,900 → regular ≈ 21,800)",
+   "observedAt": "2026-09-04",
+   "confidence": "MED",
+   "note": "Proxy: Siamo nel Forno (#425) price unlisted; high inflation"
+  },
+  {
+   "pizzeriaId": "pizzardi-bogota",
+   "price": 44900,
+   "currency": "COP",
+   "source": "Rappi Colombia",
+   "observedAt": "2026-09-04",
+   "confidence": "HIGH",
+   "note": "Margherita Bufala; only AVPN-certified group in Colombia"
+  },
+  {
+   "pizzeriaId": "brunapoli-santiago",
+   "price": 8900,
+   "currency": "CLP",
+   "source": "https://www.brunapoli.cl/.../MenuFinalBrunapoliWsp.pdf",
+   "observedAt": "2021-10-01",
+   "confidence": "LOW",
+   "note": "2021 menu — stale, needs refresh"
+  }
+ ]
+}

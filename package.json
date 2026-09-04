@@ -1,6 +1,6 @@
 {
   "name": "pizza-index",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Margherita Pizza Index — Big Mac methodology on AVPN-certified pizzerias, country averages",
   "type": "module",
   "scripts": {
@@ -9,7 +9,7 @@
     "check": "tsc --noEmit"
   },
   "devDependencies": {
-    "@types/node": "^26.4.1",
+    "@types/node": "^22.0.0",
     "typescript": "^5.6.0"
   }
 }
