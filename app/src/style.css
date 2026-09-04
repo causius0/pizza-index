@@ -63,7 +63,16 @@ main.wrap { padding-top: 1.75rem; padding-bottom: 3rem; }
 
 /* globe + detail: 7:5 split */
 .split { display: grid; grid-template-columns: 7fr 5fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+.split > * { min-width: 0; }
+#data, #wages { overflow-x: auto; }
+#data table, #wages table { min-width: 560px; }
 @media (max-width: 960px) { .split { grid-template-columns: 1fr; } }
+@media (max-width: 640px) {
+  .top-in { flex-wrap: wrap; row-gap: 0.25rem; }
+  .fxdate { display: none; }
+  .hero-facts { flex-direction: column; gap: 0.5rem; }
+  .wrap { padding-left: 1rem; padding-right: 1rem; }
+}
 .globe-card { margin-bottom: 0; min-height: 420px; display: flex; flex-direction: column; }
 #globemap { flex: 1; min-height: 380px; cursor: grab; }
 #globemap canvas { border-radius: 6px; }

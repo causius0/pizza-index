@@ -19,7 +19,7 @@ interface State {
 
 const state: State = { query: '', sort: 'overUnderPct', ccy: 'EUR', selected: 'US' };
 const markets = computeMarkets();
-let globeReady = false;
+let globeNode: HTMLElement | null = null;
 
 function visible(): Market[] {
   const q = state.query.trim().toLowerCase();
@@ -69,7 +69,7 @@ function render(): void {
         <div class="globe-legend">
           <span><i class="swatch" style="background:#c9a227"></i>Naples base</span>
           <span><i class="swatch" style="background:#b5341f"></i>pricier than Naples</span>
-          <span><i class="swatch" style="background:#ddd5c3"></i>no data yet</span>
+          <span><i class="swatch" style="background:#d8d2c4"></i>no data yet</span>
         </div>
       </div>
       <aside class="card detail" id="detail">${detailPanel(sel)}</aside>
@@ -112,10 +112,17 @@ function render(): void {
     render();
   });
 
-  if (!globeReady) {
-    globeReady = true;
+  if (!globeNode) {
     const el = document.querySelector<HTMLElement>('#globemap');
-    if (el) void mountGlobe(el, markets, pick);
+    if (el) {
+      globeNode = el;
+      void mountGlobe(el, markets, pick).catch(() => {
+        globeNode = null;
+      });
+    }
+  } else {
+    // Re-attach the live globe (with its WebGL context) instead of remounting.
+    document.querySelector('#globemap')?.replaceWith(globeNode);
   }
 }
 

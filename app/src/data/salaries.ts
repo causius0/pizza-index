@@ -29,6 +29,7 @@ export const SALARIES: Salary[] = [
   { iso: 'AR', meanMonthly: 956283, currency: 'ARS', basis: 'net', source: 'Wikipedia/List of American countries by average wage (net; high inflation — verify)' },
   { iso: 'CL', meanMonthly: 897019, currency: 'CLP', basis: 'net', source: 'Wikipedia/List of American countries by average wage (net)' },
   { iso: 'CO', meanMonthly: 1390853, currency: 'COP', basis: 'net', source: 'Wikipedia/List of American countries by average wage (net)' },
+  { iso: 'RU', meanMonthly: 87952, currency: 'RUB', basis: 'gross', source: 'Rosstat 2024 average nominal accrued wage' },
 ];
 
 export function hoursToBuy(priceLocal: number, s: Salary): number {
