@@ -66,6 +66,8 @@ export const PIZZERIAS: Pizzeria[] = [
   { id: 'bellini-antwerp', name: 'Pizzeria Bellini', city: 'Antwerp', lat: 51.22, lng: 4.41, market: 'BE', website: 'https://pizzeriabellini.be/', certification: { source: 'AVPN', memberNumber: '698', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
   { id: 'paradiso-bergen', name: 'Villa Paradiso', city: 'Bergen', lat: 60.392, lng: 5.322, market: 'NO', certification: { source: 'AVPN', memberNumber: '1035', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
   { id: 'uzupio-vilnius', name: 'Užupio Picerija', city: 'Vilnius', lat: 54.683, lng: 25.299, market: 'LT', certification: { source: 'AVPN', memberNumber: '720', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
+  { id: 'napule-meilen', name: 'Napulé Pizzeria', city: 'Meilen', lat: 47.272, lng: 8.611, market: 'CH', website: 'https://www.napule.ch/', certification: { source: 'AVPN', memberNumber: '713', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
+  { id: 'campania-belgrade', name: 'Campania Pizza Gourmet', city: 'Belgrade', lat: 44.812, lng: 20.423, market: 'RS', website: 'https://campania.rs/', certification: { source: 'AVPN', memberNumber: '939', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
 ];
 
 export const OBSERVATIONS: Observation[] = [
@@ -101,4 +103,6 @@ export const OBSERVATIONS: Observation[] = [
   { pizzeriaId: 'bellini-antwerp', price: 14, currency: 'EUR', source: 'Official menu pizzeriabellini.be (Margherita D.O.P.)', sourceUrl: 'https://pizzeriabellini.be/menu/', observedAt: '2026-09-04', confidence: 'HIGH', note: 'AVPN #698; bufala + San Marzano' },
   { pizzeriaId: 'paradiso-bergen', price: 195, currency: 'NOK', source: 'Official Bergen menu PDF SS26 (Margherita, Pizze rosse)', sourceUrl: 'https://cdn.prod.website-files.com/5c77c5f7f7364239e114229f/6a0f1f5440a92e5daab6c70d_Villa%20Paradiso%20Bergen%20meny.pdf', observedAt: '2026-09-04', confidence: 'HIGH', note: 'AVPN #1035; Verace version 220' },
   { pizzeriaId: 'uzupio-vilnius', price: 9.35, currency: 'EUR', source: 'meniumeniu.lt menu listing (Margherita classica)', sourceUrl: 'https://meniumeniu.lt/uzupio-picerija-meniu/', observedAt: '2026-09-04', confidence: 'MED', note: 'AVPN #720; third-party listing' },
+  { pizzeriaId: 'napule-meilen', price: 24.9, currency: 'CHF', source: 'Official menu PDF N_Menue-Meilen (MARGHERITA)', sourceUrl: 'https://www.napule.ch/files/napule/images/downloads/N_Menue-Meilen.pdf', observedAt: '2026-09-04', confidence: 'HIGH', note: 'AVPN #713' },
+  { pizzeriaId: 'campania-belgrade', price: 890, currency: 'RSD', source: 'Official menu PDF CPG-menu-hrana-0922 (MARGHERITA)', sourceUrl: 'https://campania.rs/wp-content/uploads/2022/10/CPG-menu-hrana-0922.pdf', observedAt: '2026-09-04', confidence: 'MED', note: 'AVPN #939; PDF dated 2022, verify current' },
 ];
