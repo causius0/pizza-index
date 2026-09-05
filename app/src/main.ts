@@ -26,7 +26,9 @@ let globeNode: HTMLElement | null = null;
 function visible(): Market[] {
   const q = state.query.trim().toLowerCase();
   const rows = markets.filter(
-    (m) => !q || m.label.toLowerCase().includes(q) || m.key.toLowerCase() === q,
+    (m) =>
+      m.overUnderPct !== null &&
+      (!q || m.label.toLowerCase().includes(q) || m.key.toLowerCase() === q),
   );
   return [...rows].sort((a, b) => {
     if (state.sort === 'label') return a.label.localeCompare(b.label);
@@ -58,7 +60,7 @@ function render(): void {
   const sel = markets.find((m) => m.key === state.selected);
   document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   ${header()}
-  ${hero(markets.length, pricedCount(), topLine())}
+  ${hero(pricedCount(), pricedCount(), topLine())}
   <main class="wrap">
     <div class="controls">
       <input id="q" type="search" placeholder="Search markets…" aria-label="Search markets" value="${state.query.replace(/"/g, '&quot;')}">
@@ -81,7 +83,6 @@ function render(): void {
           <span><i class="swatch" style="background:#c9a227"></i>Naples base</span>
           <span><i class="swatch" style="background:#b5341f"></i>pricier than Naples</span>
           <span><i class="swatch dot"></i>priced pizzeria — hover for name, click for market</span>
-          <span><i class="swatch" style="background:#d8d2c4"></i>no data yet</span>
         </div>
       </div>
       <aside class="card detail" id="detail">${detailPanel(sel)}</aside>

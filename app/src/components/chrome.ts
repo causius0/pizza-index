@@ -20,7 +20,7 @@ export function hero(marketCount: number, pricedCount: number, topLabel: string)
     </div>
     <dl class="hero-facts">
       <div><dt>Base</dt><dd>Naples €${BASE_EUR.toFixed(2)}</dd></div>
-      <div><dt>Priced</dt><dd>${pricedCount} of ${marketCount} markets</dd></div>
+      <div><dt>Priced</dt><dd>${pricedCount} markets</dd></div>
       <div><dt>Uniformity</dt><dd>AVPN whitelist, not a chain</dd></div>
       <div><dt>Figure</dt><dd>Mean per market</dd></div>
     </dl>

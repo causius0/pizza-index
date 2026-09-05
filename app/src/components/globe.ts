@@ -103,7 +103,6 @@ export async function mountGlobe(
     .onPointClick((d: any) => {
       if (d && d.market) onPick(d.market);
     });
-  globe.controls().autoRotate = true;
-  globe.controls().autoRotateSpeed = 0.6;
+  globe.controls().autoRotate = false;
   (window as unknown as { __globe?: GlobeInstance }).__globe = globe;
 }
