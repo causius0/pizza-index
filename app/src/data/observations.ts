@@ -64,6 +64,8 @@ export const PIZZERIAS: Pizzeria[] = [
   { id: 'igen-budapest', name: 'IGEN Pizza', city: 'Budapest', lat: 47.498, lng: 19.052, market: 'HU', website: 'https://www.igenpizza.hu/', certification: { source: 'AVPN', memberNumber: '791', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
   { id: 'lievitamente-salzburg', name: 'Lievitamente', city: 'Salzburg', lat: 47.809, lng: 13.055, market: 'AT', website: 'https://pizzeria-lievitamente.at/', certification: { source: 'AVPN', memberNumber: '1009', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
   { id: 'bellini-antwerp', name: 'Pizzeria Bellini', city: 'Antwerp', lat: 51.22, lng: 4.41, market: 'BE', website: 'https://pizzeriabellini.be/', certification: { source: 'AVPN', memberNumber: '698', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
+  { id: 'paradiso-bergen', name: 'Villa Paradiso', city: 'Bergen', lat: 60.392, lng: 5.322, market: 'NO', certification: { source: 'AVPN', memberNumber: '1035', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
+  { id: 'uzupio-vilnius', name: 'Užupio Picerija', city: 'Vilnius', lat: 54.683, lng: 25.299, market: 'LT', certification: { source: 'AVPN', memberNumber: '720', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
 ];
 
 export const OBSERVATIONS: Observation[] = [
@@ -97,4 +99,6 @@ export const OBSERVATIONS: Observation[] = [
   { pizzeriaId: 'igen-budapest', price: 3290, currency: 'HUF', source: 'Official menu igenpizza.hu (MARGHERITA)', sourceUrl: 'https://www.igenpizza.hu/', observedAt: '2026-09-04', confidence: 'HIGH', note: 'AVPN #791; San Marzano, fior di latte' },
   { pizzeriaId: 'lievitamente-salzburg', price: 10, currency: 'EUR', source: 'Official menu PDF (Margherita €10)', sourceUrl: 'https://pizzeria-lievitamente.at/images/lievitamente_menu.pdf', observedAt: '2026-09-04', confidence: 'HIGH', note: 'AVPN #1009' },
   { pizzeriaId: 'bellini-antwerp', price: 14, currency: 'EUR', source: 'Official menu pizzeriabellini.be (Margherita D.O.P.)', sourceUrl: 'https://pizzeriabellini.be/menu/', observedAt: '2026-09-04', confidence: 'HIGH', note: 'AVPN #698; bufala + San Marzano' },
+  { pizzeriaId: 'paradiso-bergen', price: 195, currency: 'NOK', source: 'Official Bergen menu PDF SS26 (Margherita, Pizze rosse)', sourceUrl: 'https://cdn.prod.website-files.com/5c77c5f7f7364239e114229f/6a0f1f5440a92e5daab6c70d_Villa%20Paradiso%20Bergen%20meny.pdf', observedAt: '2026-09-04', confidence: 'HIGH', note: 'AVPN #1035; Verace version 220' },
+  { pizzeriaId: 'uzupio-vilnius', price: 9.35, currency: 'EUR', source: 'meniumeniu.lt menu listing (Margherita classica)', sourceUrl: 'https://meniumeniu.lt/uzupio-picerija-meniu/', observedAt: '2026-09-04', confidence: 'MED', note: 'AVPN #720; third-party listing' },
 ];
