@@ -34,6 +34,19 @@ export const SALARIES: Salary[] = [
   { iso: 'SE', meanMonthly: 41600, currency: 'SEK', basis: 'gross', source: 'SCB salary structure whole economy 2024', medianMonthly: 37100, medianSource: 'SCB 2024 median (p50) whole economy', medianBasis: 'gross' },
   { iso: 'FI', meanMonthly: 4070, currency: 'EUR', basis: 'gross', source: 'Statistics Finland 2024 full-time average', medianMonthly: 3611, medianSource: 'Statistics Finland 2024 full-time median', medianBasis: 'gross' },
   { iso: 'AU', meanMonthly: 8562, currency: 'AUD', basis: 'gross', source: 'ABS AWOTE FT Nov 2024 $1,975.80/wk x52/12' },
+  { iso: 'PT', meanMonthly: 2190, currency: 'EUR', basis: 'gross', source: 'Wikipedia/List of European countries by average wage (gross 2025 Q4)' },
+  { iso: 'PL', meanMonthly: 9402, currency: 'PLN', basis: 'gross', source: 'Wikipedia/List of European countries by average wage (gross 2026-06)' },
+  { iso: 'GR', meanMonthly: 1415, currency: 'EUR', basis: 'gross', source: 'Wikipedia/List of European countries by average wage (gross 2025 Q1)' },
+  { iso: 'CZ', meanMonthly: 50282, currency: 'CZK', basis: 'gross', source: 'Wikipedia/List of European countries by average wage (gross 2026 Q1)' },
+  { iso: 'HU', meanMonthly: 764100, currency: 'HUF', basis: 'gross', source: 'Wikipedia/List of European countries by average wage (gross 2026-05)' },
+  { iso: 'AT', meanMonthly: 5497, currency: 'EUR', basis: 'gross', source: 'Wikipedia/List of European countries by average wage (gross 2024)' },
+  { iso: 'BE', meanMonthly: 4076, currency: 'EUR', basis: 'gross', source: 'Wikipedia/List of European countries by average wage (gross 2022)' },
+  { iso: 'NO', meanMonthly: 62070, currency: 'NOK', basis: 'gross', source: 'Wikipedia/List of European countries by average wage (gross 2025)' },
+  { iso: 'LT', meanMonthly: 2554, currency: 'EUR', basis: 'gross', source: 'Wikipedia/List of European countries by average wage (gross 2026 Q1)' },
+  { iso: 'CH', meanMonthly: 7024, currency: 'CHF', basis: 'gross', source: 'Wikipedia/List of European countries by average wage (gross 2024)' },
+  { iso: 'RS', meanMonthly: 167263, currency: 'RSD', basis: 'gross', source: 'Wikipedia/List of European countries by average wage (gross 2026-03)' },
+  { iso: 'TR', meanMonthly: 37800, currency: 'TRY', basis: 'gross', source: 'Wikipedia/List of European countries by average wage (gross 2023)' },
+  { iso: 'HR', meanMonthly: 2183, currency: 'EUR', basis: 'gross', source: 'Wikipedia/List of European countries by average wage (gross 2026-03)' },
 ];
 
 export function hoursToBuy(priceLocal: number, s: Salary): number {

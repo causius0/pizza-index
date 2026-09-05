@@ -33,6 +33,7 @@ const COUNTRY_LABELS: Record<string, string> = {
   GR: 'Greece', IE: 'Ireland', LV: 'Latvia', LT: 'Lithuania', MT: 'Malta',
   PL: 'Poland', PT: 'Portugal', CZ: 'Czechia', RO: 'Romania', SI: 'Slovenia',
   SE: 'Sweden', HU: 'Hungary', AU: 'Australia', NZ: 'New Zealand',
+  CH: 'Switzerland', NO: 'Norway', RS: 'Serbia', TR: 'Turkey',
   SA: 'Saudi Arabia', EG: 'Egypt', KW: 'Kuwait', LY: 'Libya',
 };
 

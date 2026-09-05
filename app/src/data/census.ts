@@ -17,6 +17,7 @@ const NATION_TO_ISO: Record<string, string> = {
   Grecia: 'GR', Irlanda: 'IE', Lettonia: 'LV', Lituania: 'LT', Malta: 'MT',
   Polonia: 'PL', Portogallo: 'PT', 'Repubblica Ceca': 'CZ', Romania: 'RO',
   Slovenia: 'SI', Svezia: 'SE', Ungheria: 'HU', Australia: 'AU',
+  Svizzera: 'CH', Norvegia: 'NO', Serbia: 'RS', Turchia: 'TR',
   'Nuova Zelanda': 'NZ', 'Arabia Saudita': 'SA', Egitto: 'EG', Kuwait: 'KW', Libia: 'LY',
 };
 
