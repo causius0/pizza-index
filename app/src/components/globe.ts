@@ -12,6 +12,7 @@ const NUMERIC_TO_ISO: Record<string, string> = {
   '203': 'CZ', '642': 'RO', '705': 'SI', '752': 'SE', '348': 'HU', '036': 'AU',
   '554': 'NZ', '682': 'SA', '818': 'EG', '414': 'KW', '434': 'LY',
   '756': 'CH', '578': 'NO', '688': 'RS', '792': 'TR',
+  '392': 'JP', '410': 'KR', '356': 'IN', '764': 'TH', '702': 'SG', '458': 'MY',
 };
 
 function colorFor(v: number | undefined): string {

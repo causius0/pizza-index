@@ -47,6 +47,11 @@ export const SALARIES: Salary[] = [
   { iso: 'RS', meanMonthly: 167263, currency: 'RSD', basis: 'gross', source: 'Wikipedia/List of European countries by average wage (gross 2026-03)' },
   { iso: 'TR', meanMonthly: 37800, currency: 'TRY', basis: 'gross', source: 'Wikipedia/List of European countries by average wage (gross 2023)' },
   { iso: 'HR', meanMonthly: 2183, currency: 'EUR', basis: 'gross', source: 'Wikipedia/List of European countries by average wage (gross 2026-03)' },
+  { iso: 'JP', meanMonthly: 475253, currency: 'JPY', basis: 'gross', source: 'Wikipedia/List of Asian countries by average wage (gross 2025)' },
+  { iso: 'KW', meanMonthly: 670, currency: 'KWD', basis: 'gross', source: 'Wikipedia/List of Asian countries by average wage (gross 2024-06)' },
+  { iso: 'TH', meanMonthly: 15738, currency: 'THB', basis: 'gross', source: 'Wikipedia/List of Asian countries by average wage (gross 2024 Q4)' },
+  { iso: 'SG', meanMonthly: 6593, currency: 'SGD', basis: 'gross', source: 'Wikipedia/List of Asian countries by average wage (gross 2026 Q1)' },
+  { iso: 'MY', meanMonthly: 3652, currency: 'MYR', basis: 'gross', source: 'Wikipedia/List of Asian countries by average wage (gross 2024)' },
 ];
 
 export function hoursToBuy(priceLocal: number, s: Salary): number {
