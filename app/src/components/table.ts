@@ -20,5 +20,5 @@ export function marketTable(rows: Market[], ccy: DisplayCcy, selected: string | 
       <td class="num">${v !== null ? sym + fmtNum(v) : '<em>pending</em>'}</td>
       <td>${x.overUnderPct !== null ? `<span class="pill ${x.overUnderPct >= 0 ? 'over' : 'under'}">${fmtSignedPct(x.overUnderPct)}</span>` : '—'}</td>
       <td class="num">${x.nCertified}</td><td class="num">${x.nPriced}</td></tr>`;
-  }).join('') : '<tr><td colspan="5"><em>No markets match — clear the search.</em></td></tr>'}</tbody></table>`;
+  }).join('') : '<tr><td colspan="5"><em>No markets match. Clear the search.</em></td></tr>'}</tbody></table>`;
 }

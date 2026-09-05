@@ -4,7 +4,7 @@ import { FX } from '../data/fx.ts';
 import { fmtNum, fmtSignedPct, esc } from '../lib/format.ts';
 
 export function detailPanel(m: Market | undefined): string {
-  if (!m) return '<p class="empty">Select a market on the globe or table.</p>';
+  if (!m) return '<p class="empty">Select a market in the table or on the globe.</p>';
   const obs = observationsFor(m.key);
   const members = membersFor(m);
   const shown = members.slice(0, 20);
@@ -26,7 +26,7 @@ export function detailPanel(m: Market | undefined): string {
       <strong>${esc(p.name)}</strong> <span class="conf ${o.confidence}">${o.confidence}</span>${o.includeInAverage === false ? ' <em>excluded from average</em>' : ''}<br>
       <small>${o.price.toLocaleString()} ${o.currency} · ${o.observedAt}${o.note ? ` · ${esc(o.note)}` : ''}<br>
       ${o.sourceUrl ? `<a href="${o.sourceUrl}" target="_blank" rel="noreferrer">menu source</a> · ` : `<span>${esc(o.source)}</span> · `}${p.website ? `<a href="${p.website}" target="_blank" rel="noreferrer">website</a> · ` : ''}<a href="${p.certification.certUrl}" target="_blank" rel="noreferrer">cert (${p.certification.source}${p.certification.memberNumber ? ' #' + p.certification.memberNumber : ''})</a></small>
-    </li>`).join('')}</ul>` : '<p>No menu prices yet — census only.</p>'}
+</li>`).join('')}</ul>` : '<p>Market counted in the census; no menu price observed yet.</p>'}
     <h3>Certified census (${members.length})</h3>
     <ul class="census">${shown.map((x) => `<li>${esc(x.name)} — ${esc(x.city)} <a href="${x.url}" target="_blank" rel="noreferrer">AVPN #${x.number}</a></li>`).join('')}${members.length > shown.length ? `<li><em>…and ${members.length - shown.length} more</em></li>` : ''}</ul>`;
 }

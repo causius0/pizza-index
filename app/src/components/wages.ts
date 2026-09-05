@@ -16,9 +16,9 @@ export function wageSection(markets: Market[]): string {
     .sort((a, b) => a.hours - b.hours);
   return `<section class="card" id="wages"><div class="wage-in">
     <div>
-      <h2>How long do you work for a Margherita?</h2>
-      <p class="lede">Average pay ÷ 176-hour month, against the market's average certified Margherita.
-      Gross and net are never mixed without a label — the <em>basis</em> column says which.</p>
+      <h2>Minutes of work per Margherita</h2>
+      <p class="lede">Mean pay over a 176-hour month, against the market average for a certified Margherita.
+      Gross and net are never mixed without a label; the <em>basis</em> column states which.</p>
       <table class="wagetable"><thead><tr>
         <th>Market</th><th>Margherita</th><th>Mean pay/mo</th><th>Basis</th><th>Median/mo</th><th>Hours</th>
       </tr></thead><tbody>${rows.map(({ m, s, hours }) => `<tr>

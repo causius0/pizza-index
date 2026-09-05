@@ -77,19 +77,19 @@ function render(): void {
     </div>
     <div class="split" id="world">
       <div class="card globe-card">
-        <h2>The world, priced</h2>
+        <h2>Valuation by market</h2>
         <div id="globemap" aria-label="Globe color-coded by valuation vs Naples"></div>
         <div class="globe-legend">
           <span><i class="swatch" style="background:#c9a227"></i>Naples base</span>
           <span><i class="swatch" style="background:#b5341f"></i>pricier than Naples</span>
-          <span><i class="swatch dot"></i>priced pizzeria — hover for name, click for market</span>
+          <span><i class="swatch dot"></i>priced pizzeria: hover for name, click for market</span>
         </div>
       </div>
       <aside class="card detail" id="detail">${detailPanel(sel)}</aside>
     </div>
     ${wageSection(markets)}
     <div class="card" id="data"><h2>All markets</h2>
-      <p class="lede">Means across certified observations. Italy enters as three cities — Naples (€${BASE_EUR.toFixed(2)}, the base), Rome and Milan. FX ${FX_DATE}.${rows.length !== markets.length ? ` Showing ${rows.length} of ${markets.length}.` : ''}</p>
+      <p class="lede">Means across certified observations. Italy is reported as three cities: Naples (€${BASE_EUR.toFixed(2)}, the base), Rome and Milan. FX ${FX_DATE}.${rows.length !== markets.length ? ` Showing ${rows.length} of ${markets.length}.` : ''}</p>
       ${marketTable(rows, state.ccy, state.selected, state.sort)}</div>
     ${method()}
   </main>
@@ -163,7 +163,7 @@ function render(): void {
           .then(() => el.querySelector('.globe-loading')?.remove())
           .catch(() => {
             globeNode = null; // retry on next render
-            el.innerHTML = '<p class="globe-fallback">Map tiles failed to load — check your connection. Every figure is in the table below.</p>';
+            el.innerHTML = '<p class="globe-fallback">Map tiles failed to load. Every figure is in the table below.</p>';
           });
       }, { rootMargin: '300px' });
       io.observe(el);
