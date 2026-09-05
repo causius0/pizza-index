@@ -62,6 +62,8 @@ export const PIZZERIAS: Pizzeria[] = [
   { id: 'napolitivo-athens', name: 'Napolitivo', city: 'Athens', lat: 37.984, lng: 23.728, market: 'GR', website: 'https://www.napolitivo.gr/', certification: { source: 'AVPN', memberNumber: '634', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
   { id: 'nuova-praha', name: 'Pizza Nuova', city: 'Prague', lat: 50.088, lng: 14.427, market: 'CZ', website: 'https://www.pizzanuova.cz/', certification: { source: 'AVPN', memberNumber: '234', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
   { id: 'igen-budapest', name: 'IGEN Pizza', city: 'Budapest', lat: 47.498, lng: 19.052, market: 'HU', website: 'https://www.igenpizza.hu/', certification: { source: 'AVPN', memberNumber: '791', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
+  { id: 'lievitamente-salzburg', name: 'Lievitamente', city: 'Salzburg', lat: 47.809, lng: 13.055, market: 'AT', website: 'https://pizzeria-lievitamente.at/', certification: { source: 'AVPN', memberNumber: '1009', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
+  { id: 'bellini-antwerp', name: 'Pizzeria Bellini', city: 'Antwerp', lat: 51.22, lng: 4.41, market: 'BE', website: 'https://pizzeriabellini.be/', certification: { source: 'AVPN', memberNumber: '698', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
 ];
 
 export const OBSERVATIONS: Observation[] = [
@@ -93,4 +95,6 @@ export const OBSERVATIONS: Observation[] = [
   { pizzeriaId: 'napolitivo-athens', price: 10.7, currency: 'EUR', source: 'Official menu napolitivo.gr/en/menu (Margherita)', sourceUrl: 'https://www.napolitivo.gr/en/menu/', observedAt: '2026-09-04', confidence: 'HIGH', note: 'AVPN #634' },
   { pizzeriaId: 'nuova-praha', price: 318, currency: 'CZK', source: 'Official menu pizzanuova.cz (Margherita classica)', sourceUrl: 'https://www.pizzanuova.cz/cz/menu/?id=36387', observedAt: '2026-09-04', confidence: 'HIGH', note: 'AVPN #234; bufala 358 Kč' },
   { pizzeriaId: 'igen-budapest', price: 3290, currency: 'HUF', source: 'Official menu igenpizza.hu (MARGHERITA)', sourceUrl: 'https://www.igenpizza.hu/', observedAt: '2026-09-04', confidence: 'HIGH', note: 'AVPN #791; San Marzano, fior di latte' },
+  { pizzeriaId: 'lievitamente-salzburg', price: 10, currency: 'EUR', source: 'Official menu PDF (Margherita €10)', sourceUrl: 'https://pizzeria-lievitamente.at/images/lievitamente_menu.pdf', observedAt: '2026-09-04', confidence: 'HIGH', note: 'AVPN #1009' },
+  { pizzeriaId: 'bellini-antwerp', price: 14, currency: 'EUR', source: 'Official menu pizzeriabellini.be (Margherita D.O.P.)', sourceUrl: 'https://pizzeriabellini.be/menu/', observedAt: '2026-09-04', confidence: 'HIGH', note: 'AVPN #698; bufala + San Marzano' },
 ];
