@@ -40,8 +40,17 @@ function visible(): Market[] {
 function topLine(): string {
   const priced = markets.filter((m) => m.overUnderPct !== null && m.key !== BASE_KEY);
   if (!priced.length) return '';
-  const top = [...priced].sort((a, b) => (b.overUnderPct ?? 0) - (a.overUnderPct ?? 0))[0];
-  return `Dearest is <strong>${top.label} (${fmtSignedPct(top.overUnderPct)})</strong>.`;
+  const sorted = [...priced].sort((a, b) => (b.overUnderPct ?? 0) - (a.overUnderPct ?? 0));
+  const top = sorted[0];
+  const bottom = sorted[sorted.length - 1];
+  const cheap = bottom.key === top.key
+    ? ''
+    : ` Cheapest is <strong>${bottom.label} (${fmtSignedPct(bottom.overUnderPct)})</strong>.`;
+  return `Dearest is <strong>${top.label} (${fmtSignedPct(top.overUnderPct)})</strong>.${cheap}`;
+}
+
+function pricedCount(): number {
+  return markets.filter((m) => m.avgEur !== null).length;
 }
 
 function render(): void {
@@ -49,7 +58,7 @@ function render(): void {
   const sel = markets.find((m) => m.key === state.selected);
   document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   ${header()}
-  ${hero(markets.length, topLine())}
+  ${hero(markets.length, pricedCount(), topLine())}
   <main class="wrap">
     <div class="controls">
       <input id="q" type="search" placeholder="Search markets…" aria-label="Search markets" value="${state.query.replace(/"/g, '&quot;')}">

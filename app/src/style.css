@@ -111,6 +111,7 @@ th, td { text-align: left; padding: 0.55rem 0.6rem; border-bottom: 1px solid var
 thead th { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); }
 tbody tr[data-key] { cursor: pointer; }
 tbody tr:hover, tbody tr.sel { background: #f3e9d2; }
+tbody tr.sel { box-shadow: inset 3px 0 var(--accent); }
 .pill { display: inline-block; min-width: 3.4rem; text-align: center; border-radius: 999px; padding: 1px 10px; font-size: 12px; font-family: var(--font-mono); color: #fff; }
 .pill.over { background: var(--over); }
 .pill.under { background: var(--under); }

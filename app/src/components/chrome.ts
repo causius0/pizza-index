@@ -10,7 +10,7 @@ export function header(): string {
   </div></header>`;
 }
 
-export function hero(marketCount: number, topLabel: string): string {
+export function hero(marketCount: number, pricedCount: number, topLabel: string): string {
   return `<section class="hero"><div class="wrap hero-in">
     <div class="hero-main">
       <p class="kicker">Nº 01 — Big Mac methodology, Italian certification</p>
@@ -20,6 +20,7 @@ export function hero(marketCount: number, topLabel: string): string {
     </div>
     <dl class="hero-facts">
       <div><dt>Base</dt><dd>Naples €${BASE_EUR.toFixed(2)}</dd></div>
+      <div><dt>Priced</dt><dd>${pricedCount} of ${marketCount} markets</dd></div>
       <div><dt>Uniformity</dt><dd>AVPN whitelist, not a chain</dd></div>
       <div><dt>Figure</dt><dd>Mean per market</dd></div>
     </dl>

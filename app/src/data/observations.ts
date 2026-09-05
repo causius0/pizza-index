@@ -51,6 +51,10 @@ export const PIZZERIAS: Pizzeria[] = [
   { id: 'beppe-amsterdam', name: 'Pizza Beppe 4', city: 'Amsterdam', lat: 52.368, lng: 4.904, market: 'NL', website: 'https://www.pizzabeppe.nl/', certification: { source: 'AVPN', memberNumber: '632', certUrl: 'https://www.pizzanapoletana.org/en/associati/586-pizza_beppe_4' } },
   { id: 'luigia-dubai', name: 'Luigia Dubai', city: 'Dubai', lat: 25.204, lng: 55.271, market: 'AE', website: 'https://www.luigia.ae/', certification: { source: 'AVPN', memberNumber: '700', certUrl: 'https://www.pizzanapoletana.org/en/associati/688-luigia_dubai' } },
   { id: 'pizza22-moscow', name: 'Pizza 22 cm', city: 'Moscow (Solyanka)', lat: 55.756, lng: 37.615, market: 'RU', website: 'https://pizza22cm.ru/', certification: { source: 'AVPN', memberNumber: '911', certUrl: 'https://www.pizzanapoletana.org/en/associati/879-pizza_22_cm' } },
+  { id: 'bananas-stockholm', name: 'Bananas', city: 'Stockholm', lat: 59.314, lng: 18.077, market: 'SE', website: 'https://bistrobananas.se/', certification: { source: 'AVPN', memberNumber: '695', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
+  { id: 'tribunali-helsinki', name: 'Pizzeria Via Tribunali', city: 'Helsinki', lat: 60.169, lng: 24.938, market: 'FI', website: 'https://viatribunali.fi/', certification: { source: 'AVPN', memberNumber: '675', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
+  { id: 'gradi-brunswick', name: '400 Gradi (Brunswick)', city: 'Melbourne', lat: -37.767, lng: 144.962, market: 'AU', website: 'https://400gradi.com.au/', certification: { source: 'AVPN', memberNumber: '322', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
+  { id: 'muti-porto', name: 'Muti Pizzeria Napoletana', city: 'Porto', lat: 41.157, lng: -8.629, market: 'PT', website: 'https://www.muti.pt/', certification: { source: 'AVPN', memberNumber: '794', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
 ];
 
 export const OBSERVATIONS: Observation[] = [
@@ -71,4 +75,8 @@ export const OBSERVATIONS: Observation[] = [
   { pizzeriaId: 'nap-mar-barcelona', price: 8.9, currency: 'EUR', source: 'Uber Eats official store menu (JSON-LD)', sourceUrl: 'https://www.ubereats.com/es-en/store/nap-mar-barceloneta/ipvkxpO9RJq1hBnkJcfstw', observedAt: '2026-09-04', confidence: 'MED' },
   { pizzeriaId: 'beppe-amsterdam', price: 10.95, currency: 'EUR', source: 'TheFork official menu mirror', sourceUrl: 'https://thefork.com/restaurant/pizza-beppe-middenweg-r461671', observedAt: '2026-09-04', confidence: 'MED', note: 'First NL restaurant accepted by AVPN' },
   { pizzeriaId: 'pizza22-moscow', price: 550, currency: 'RUB', source: 'Official chain menu PDF Jun 2026 (Margherita 22)', sourceUrl: 'https://pizza22cm.ru/wp-content/uploads/2026/06/menu_pizza22_pizza_bk-2.pdf', observedAt: '2026-09-04', confidence: 'MED', note: 'Chain-wide menu; Moscow branch (Solyanka) AVPN #879' },
+  { pizzeriaId: 'bananas-stockholm', price: 185, currency: 'SEK', source: 'Official menu bistrobananas.se/meny (Margarita)', sourceUrl: 'https://bistrobananas.se/meny', observedAt: '2026-09-04', confidence: 'HIGH', note: 'AVPN #695; ekologisk tomat, fior di latte' },
+  { pizzeriaId: 'tribunali-helsinki', price: 16.9, currency: 'EUR', source: 'Official menu viatribunali.fi/en/menu (Margherita)', sourceUrl: 'https://viatribunali.fi/en/menu/', observedAt: '2026-09-04', confidence: 'HIGH', note: 'AVPN #675; bufala +€5' },
+  { pizzeriaId: 'gradi-brunswick', price: 18, currency: 'AUD', source: 'Official site 400gradi.com.au (Margherita $18 promo)', sourceUrl: 'https://400gradi.com.au/', observedAt: '2026-09-04', confidence: 'MED', note: 'AVPN #322; Brunswick/Eastland/Mornington' },
+  { pizzeriaId: 'muti-porto', price: 12, currency: 'EUR', source: 'Official menu muti.pt/menu (Margherita)', sourceUrl: 'https://www.muti.pt/menu/', observedAt: '2026-09-04', confidence: 'HIGH', note: 'AVPN #794; San Marzano DOP, fior di latte' },
 ];

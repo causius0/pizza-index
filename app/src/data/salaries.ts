@@ -31,6 +31,9 @@ export const SALARIES: Salary[] = [
   { iso: 'CL', meanMonthly: 897019, currency: 'CLP', basis: 'net', source: 'Wikipedia/List of American countries by average wage (net)' },
   { iso: 'CO', meanMonthly: 1390853, currency: 'COP', basis: 'net', source: 'Wikipedia/List of American countries by average wage (net)' },
   { iso: 'RU', meanMonthly: 87952, currency: 'RUB', basis: 'gross', source: 'Rosstat 2024 average nominal accrued wage' },
+  { iso: 'SE', meanMonthly: 41600, currency: 'SEK', basis: 'gross', source: 'SCB salary structure whole economy 2024', medianMonthly: 37100, medianSource: 'SCB 2024 median (p50) whole economy', medianBasis: 'gross' },
+  { iso: 'FI', meanMonthly: 4070, currency: 'EUR', basis: 'gross', source: 'Statistics Finland 2024 full-time average', medianMonthly: 3611, medianSource: 'Statistics Finland 2024 full-time median', medianBasis: 'gross' },
+  { iso: 'AU', meanMonthly: 8562, currency: 'AUD', basis: 'gross', source: 'ABS AWOTE FT Nov 2024 $1,975.80/wk x52/12' },
 ];
 
 export function hoursToBuy(priceLocal: number, s: Salary): number {

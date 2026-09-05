@@ -1,0 +1,24 @@
+import { chromium } from 'playwright-core';
+const b = await chromium.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true, args: ['--no-sandbox', '--enable-unsafe-swiftshader'] });
+const p = await b.newPage();
+const errs = [];
+p.on('console', m => { if (m.type() === 'error') errs.push(m.text().slice(0, 120)); });
+p.on('pageerror', e => errs.push(String(e).slice(0, 120)));
+await p.goto('http://localhost:8138/', { waitUntil: 'networkidle', timeout: 45000 });
+await p.waitForTimeout(4000);
+const hero = await p.locator('.hero .sub').textContent();
+const facts = await p.locator('.hero-facts').textContent();
+const rows = await p.locator('#data tbody tr').count();
+const canvases = await p.locator('#globemap canvas').count();
+// click Sweden row
+await p.locator('#data tbody tr[data-key="SE"]').click();
+await p.waitForTimeout(500);
+const detail = (await p.locator('.detail').textContent())?.replace(/\s+/g, ' ').slice(0, 220);
+const wageSE = await p.locator('#wages').textContent();
+console.log('hero:', hero?.replace(/\s+/g, ' '));
+console.log('facts:', facts?.replace(/\s+/g, ' '));
+console.log('rows:', rows, 'canvases:', canvases);
+console.log('detail SE:', detail);
+console.log('wages has Sweden:', /Sweden/.test(wageSE ?? ''), '| Finland:', /Finland/.test(wageSE ?? ''), '| Australia:', /Australia/.test(wageSE ?? ''));
+console.log('ERRORS:', JSON.stringify(errs));
+await b.close();

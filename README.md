@@ -1,7 +1,7 @@
 # Margherita Index — the Big Mac Index for real pizza
 
 One identical product — a Margherita at an AVPN-certified pizzeria — priced across
-18 world markets against Naples (€6.00). Big Mac methodology (implied PPP +
+22 world markets against Naples (€6.00). Big Mac methodology (implied PPP +
 over/under valuation vs market FX), Italian certification as the uniformity
 guarantee instead of a chain.
 
@@ -17,7 +17,7 @@ guarantee instead of a chain.
   priced counts per market.
 - Per-market detail: observations with website + certification URL + menu source +
   confidence, FX line with source, full certified census.
-- Wage section: mean (+ median where sourced: US, UK, France) monthly pay with
+- Wage section: mean (+ median where sourced: US, UK, France, Sweden, Finland) monthly pay with
   labeled gross/net basis, and hours-to-buy one Margherita on a 176-hour month.
 - Method section, editorial broadsheet design, mobile-safe.
 
