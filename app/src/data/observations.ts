@@ -31,7 +31,9 @@ export interface Observation {
 }
 
 export const PIZZERIAS: Pizzeria[] = [
-  { id: 'naples-base', name: 'Naples neighbourhood pizzeria (representative)', city: 'Napoli', lat: 40.852, lng: 14.268, market: 'IT-NAP', certification: { source: 'AVPN', certUrl: 'https://www.pizzanapoletana.org/en/' } },
+  { id: 'starita-napoli', name: 'Starita a Materdei', city: 'Napoli (Materdei)', lat: 40.8527, lng: 14.2479, market: 'IT-NAP', certification: { source: 'AVPN', memberNumber: '195', certUrl: 'https://www.pizzanapoletana.org/en/associati/153-starita_a_materdei' } },
+  { id: 'dimatteo-napoli', name: 'Di Matteo', city: 'Napoli (Via dei Tribunali)', lat: 40.8523, lng: 14.2683, market: 'IT-NAP', certification: { source: 'AVPN', memberNumber: '42', certUrl: 'https://www.pizzanapoletana.org/en/associati/46-di_matteo' } },
+  { id: 'sorbillo-napoli', name: 'Gino Sorbillo', city: 'Napoli (Via dei Tribunali)', lat: 40.8524, lng: 14.2691, market: 'IT-NAP', certification: { source: 'AVPN', memberNumber: '315', certUrl: 'https://www.pizzanapoletana.org/en/associati/257-gino_sorbillo' } },
   { id: 'kalo-roma', name: '50 Kalò di Ciro Salvo Roma', city: 'Roma', lat: 41.903, lng: 12.496, market: 'IT-ROM', certification: { source: 'AVPN', memberNumber: '1000', certUrl: 'https://www.pizzanapoletana.org/en/associati/971-50_kalo_di_ciro_salvo' } },
   { id: 'starita-milano', name: 'Starita a Milano', city: 'Milano', lat: 45.464, lng: 9.19, market: 'IT-MIL', certification: { source: 'AVPN', memberNumber: '600', certUrl: 'https://www.pizzanapoletana.org/en/associati/584-starita_a_milano' } },
   { id: 'damichele-london', name: "L'Antica Pizzeria da Michele", city: 'London', lat: 51.507, lng: -0.128, market: 'GB', website: 'https://www.damichele.co.uk/', certification: { source: 'AVPN', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
@@ -77,7 +79,9 @@ export const PIZZERIAS: Pizzeria[] = [
 ];
 
 export const OBSERVATIONS: Observation[] = [
-  { pizzeriaId: 'naples-base', price: 6.0, currency: 'EUR', source: 'OpenPizzaMap Naples 2026 + pizzadixit.com (€5–6 neighbourhood)', observedAt: '2026-09-04', confidence: 'HIGH', note: 'Index base' },
+  { pizzeriaId: 'starita-napoli', price: 7.50, currency: 'EUR', source: 'Glovo store menu (Margherita)', sourceUrl: 'https://glovoapp.com/it/it/napoli/stores/starita-a-materdei-nap', observedAt: '2026-09-05', confidence: 'MED', note: 'Index base (1 of 3)' },
+  { pizzeriaId: 'dimatteo-napoli', price: 6.50, currency: 'EUR', source: 'Glovo store menu (Margherita)', sourceUrl: 'https://glovoapp.com/en/it/napoli/stores/di-matteo-napoli', observedAt: '2026-09-05', confidence: 'MED', note: 'Index base (2 of 3)' },
+  { pizzeriaId: 'sorbillo-napoli', price: 5.00, currency: 'EUR', source: 'eurocityguide 2026 Naples guide (Sorbillo from €5; 2021 menu photos showed €4.00)', sourceUrl: 'https://eurocityguide.com/italy/naples-restaurants-best-places-to-eat', observedAt: '2026-09-05', confidence: 'MED', note: 'Index base (3 of 3)' },
   { pizzeriaId: 'kalo-roma', price: 9.0, currency: 'EUR', source: 'Italy guides 2024–26 (Rome Margherita €8–12)', observedAt: '2026-09-04', confidence: 'MED', note: 'City representative; venue price tbc' },
   { pizzeriaId: 'starita-milano', price: 10.0, currency: 'EUR', source: 'Italy guides 2024–26 (Milan Margherita €8–12, gourmet to €18)', observedAt: '2026-09-04', confidence: 'MED', note: 'City representative; venue price tbc' },
   { pizzeriaId: 'damichele-london', price: 14.99, currency: 'GBP', source: 'eateasy.co.uk menu', sourceUrl: 'https://eateasy.co.uk/', observedAt: '2026-09-04', confidence: 'HIGH' },

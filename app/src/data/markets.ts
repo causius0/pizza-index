@@ -16,7 +16,14 @@ export interface Market {
 }
 
 export const BASE_KEY = 'IT-NAP';
-export const BASE_EUR = 6.0;
+// Base = mean Margherita price across priced AVPN-certified Naples pizzerias.
+export const BASE_EUR: number = (() => {
+  const ps = OBSERVATIONS.filter((o) => {
+    const p = PIZZERIAS.find((x) => x.id === o.pizzeriaId);
+    return p?.market === BASE_KEY && p.certification.source === 'AVPN' && o.includeInAverage !== false;
+  }).map((o) => o.price);
+  return ps.length ? ps.reduce((a, b) => a + b, 0) / ps.length : 6.0;
+})();
 
 const IT_CITIES = [
   { key: 'IT-NAP', label: 'Naples', needle: 'napoli' },
