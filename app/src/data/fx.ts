@@ -26,6 +26,7 @@ export const FX: Record<string, FxEntry> = {
   NOK: { perEur: 10.8035, src: 'ECB 2026-09-04' },
   CHF: { perEur: 0.9405, src: 'ECB 2026-09-04' },
   RSD: { perEur: 117.2, src: 'indicative (NBS ~117.2)' },
+  TRY: { perEur: 56.2995, src: 'ECB 2026-09-04' },
   COP: { perEur: 4590, src: 'indicative (EURUSD 1.1622 x USDCOP ~3950)' },
   CLP: { perEur: 1103, src: 'indicative (EURUSD 1.1622 x USDCLP ~950)' },
   ARS: { perEur: 1568, src: 'indicative (EURUSD 1.1622 x USDARS ~1350)' },

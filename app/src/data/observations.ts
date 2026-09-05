@@ -68,6 +68,7 @@ export const PIZZERIAS: Pizzeria[] = [
   { id: 'uzupio-vilnius', name: 'Užupio Picerija', city: 'Vilnius', lat: 54.683, lng: 25.299, market: 'LT', certification: { source: 'AVPN', memberNumber: '720', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
   { id: 'napule-meilen', name: 'Napulé Pizzeria', city: 'Meilen', lat: 47.272, lng: 8.611, market: 'CH', website: 'https://www.napule.ch/', certification: { source: 'AVPN', memberNumber: '713', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
   { id: 'campania-belgrade', name: 'Campania Pizza Gourmet', city: 'Belgrade', lat: 44.812, lng: 20.423, market: 'RS', website: 'https://campania.rs/', certification: { source: 'AVPN', memberNumber: '939', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
+  { id: 'nappo-istanbul', name: 'Nappo Pizza', city: 'Istanbul', lat: 41.025, lng: 29.0, market: 'TR', certification: { source: 'AVPN', memberNumber: '772', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
 ];
 
 export const OBSERVATIONS: Observation[] = [
@@ -105,4 +106,5 @@ export const OBSERVATIONS: Observation[] = [
   { pizzeriaId: 'uzupio-vilnius', price: 9.35, currency: 'EUR', source: 'meniumeniu.lt menu listing (Margherita classica)', sourceUrl: 'https://meniumeniu.lt/uzupio-picerija-meniu/', observedAt: '2026-09-04', confidence: 'MED', note: 'AVPN #720; third-party listing' },
   { pizzeriaId: 'napule-meilen', price: 24.9, currency: 'CHF', source: 'Official menu PDF N_Menue-Meilen (MARGHERITA)', sourceUrl: 'https://www.napule.ch/files/napule/images/downloads/N_Menue-Meilen.pdf', observedAt: '2026-09-04', confidence: 'HIGH', note: 'AVPN #713' },
   { pizzeriaId: 'campania-belgrade', price: 890, currency: 'RSD', source: 'Official menu PDF CPG-menu-hrana-0922 (MARGHERITA)', sourceUrl: 'https://campania.rs/wp-content/uploads/2022/10/CPG-menu-hrana-0922.pdf', observedAt: '2026-09-04', confidence: 'MED', note: 'AVPN #939; PDF dated 2022, verify current' },
+  { pizzeriaId: 'nappo-istanbul', price: 370, currency: 'TRY', source: 'menuvefiyat.com.tr menu listing (Vejetaryen Margherita)', sourceUrl: 'https://menuvefiyat.com.tr/nappo-pizza-menu/', observedAt: '2026-09-04', confidence: 'LOW', note: 'AVPN #772/#834/#952; third-party, confirm at venue' },
 ];
