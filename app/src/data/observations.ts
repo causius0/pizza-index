@@ -59,6 +59,7 @@ export const PIZZERIAS: Pizzeria[] = [
   { id: 'basta-makarska', name: 'Basta Gourmet Bar', city: 'Makarska', lat: 43.293, lng: 17.018, market: 'HR', certification: { source: 'AVPN', memberNumber: '957', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
   { id: 'songe-nyc', name: "Song 'e Napule", city: 'New York City', lat: 40.729, lng: -74.0, market: 'US', certification: { source: 'AVPN', memberNumber: '759', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
   { id: 'pupatella-arlington', name: 'Pupatella (North Arlington)', city: 'Arlington VA', lat: 38.881, lng: -77.112, market: 'US', website: 'https://www.pupatella.com/', certification: { source: 'AVPN', memberNumber: '348', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
+  { id: 'napolitivo-athens', name: 'Napolitivo', city: 'Athens', lat: 37.984, lng: 23.728, market: 'GR', website: 'https://www.napolitivo.gr/', certification: { source: 'AVPN', memberNumber: '634', certUrl: 'https://www.pizzanapoletana.org/en/associati' } },
 ];
 
 export const OBSERVATIONS: Observation[] = [
@@ -87,4 +88,5 @@ export const OBSERVATIONS: Observation[] = [
   { pizzeriaId: 'basta-makarska', price: 14, currency: 'EUR', source: 'dish.co ordering menu (MARGHERITA €14)', sourceUrl: 'https://basta-gourmet-bar-makarska.order.dish.co/menus', observedAt: '2026-09-04', confidence: 'MED', note: 'AVPN #957; chain has 4 HR branches' },
   { pizzeriaId: 'songe-nyc', price: 25, currency: 'USD', source: 'Yelp venue menu (Margherita 25.00)', sourceUrl: 'https://www.yelp.com/menu/song-e-napule-new-york', observedAt: '2026-09-04', confidence: 'MED', note: 'AVPN #759; user-submitted menu, needs direct confirm' },
   { pizzeriaId: 'pupatella-arlington', price: 16.5, currency: 'USD', source: 'Toast official ordering (Margherita DOC $16.50, Leesburg)', sourceUrl: 'https://www.toasttab.com/local/order/pupatella-leesburg-350-e-market-st/r-70174d5a-4757-4a89-8d8a-940c6438d7a1/item-burrata-pizza_33c694b6-8b1e-46df-a1de-8da57db554ab', observedAt: '2026-09-04', confidence: 'MED', note: 'AVPN #348; chain menu assumed uniform across DC-area branches' },
+  { pizzeriaId: 'napolitivo-athens', price: 10.7, currency: 'EUR', source: 'Official menu napolitivo.gr/en/menu (Margherita)', sourceUrl: 'https://www.napolitivo.gr/en/menu/', observedAt: '2026-09-04', confidence: 'HIGH', note: 'AVPN #634' },
 ];
