@@ -6,7 +6,7 @@ over/under valuation vs market FX), Italian certification as the uniformity
 guarantee instead of a chain.
 
 **Live:** production deploys from `main` via Vercel (git-connected).
-**Repo:** `https://github.com/causius0/pizza-index`
+**Repo:** `https://github.com/causius0/margherita-index`
 
 ## What's in the app (`app/`, TypeScript + Vite, no backend)
 
